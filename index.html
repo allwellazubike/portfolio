@@ -3,11 +3,54 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="./output.css" rel="stylesheet">
+  <link href="./src/output.css" rel="stylesheet">
+  <link rel="stylesheet" href="./src/styles.css">
+  <link href="https://api.fontshare.com/v2/css?f[]=chillax@200,300,400,500,600,700&display=swap" rel="stylesheet">
+  <link rel="preload" href="./Acorn Font/Acorn-Bold.woff2" as="font" type="font/woff2" crossorigin>
+  <style>
+    @font-face {
+  font-family: 'Acorn';
+  src: url('./Acorn Font/Acorn-SemiBold.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.intro {
+  font-family: 'Acorn', sans-serif;
+}
+
+body {
+  font-family: 'Chillax', sans-serif;
+}
+
+  </style>
 </head>
-<body>
-  <h1 class="text-3xl font-bold underline">
-    Hello world!
-  </h1>
+<body class="bg-[#a0430a]">
+  <header>
+    <nav class="flex flex-row items-center w-full justify-center">
+      <div class="hidden chillax font-medium pt-8 md:flex text-xl items-center gap-8">
+          <a href="" class="text-[#dfe8e6] hover:text-black transition-colors">Work</a>
+          <a href="" class="text-[#dfe8e6] hover:text-black transition-colors">About</a>
+          <a href="" class="text-[#dfe8e6] hover:text-black transition-colors">Play</a>
+          <a href="" class="text-[#dfe8e6] hover:text-black transition-colors">Notes</a>
+          <a href="" class="text-[#dfe8e6] hover:text-black transition-colors">Contact</a>
+        </div>
+    </nav>
+    <h1 class="text-[7.5rem] mt-30 intro leading-25 text-[#dfe8e6] text-center">Hi. I'm Allwell. <br> A Developer.</h1>
+    <h1 class="text-[#dfe8e6] text-xl max-w-3xl mx-auto font-medium text-center mt-15">
+      I'm passionate about crafting experiences that are engaging, accessible, and user-centric.
+    </h1>
+  </header>
+
+  <footer>
+  </footer>
+
+  <!-- <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M50 0C45.5817 0 42 3.58172 42 8V42H8C3.58172 42 0 45.5817 0 50C0 54.4183 3.58172 58 8 58H42V92C42 96.4183 45.5817 100 50 100C54.4183 100 58 96.4183 58 92V58H92C96.4183 58 100 54.4183 100 50C100 45.5817 96.4183 42 92 42H58V8C58 3.58172 54.4183 0 50 0Z" fill="white"/>
+</svg>
+   -->
+
+
 </body>
 </html>
