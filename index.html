@@ -32,55 +32,92 @@
       body {
         font-family: "Chillax", sans-serif;
       }
+
+      
+
+
+
+      /* Subtle float animation */
+  .float-gentle {
+    animation: float-gentle 8s ease-in-out infinite;
+  }
+  
+  .float-gentle:nth-child(2) { animation-delay: -4s; }
+  
+  @keyframes float-gentle {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+  }
+  
+  /* Slow rotation */
+  .rotate-slow {
+    animation: rotate-slow 40s linear infinite;
+    transform-origin: center;
+  }
+  
+  @keyframes rotate-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  
+  /* Gentle pulse */
+  .pulse-gentle {
+    animation: pulse-gentle 6s ease-in-out infinite;
+  }
+  
+  @keyframes pulse-gentle {
+    0%, 100% { opacity: 0.15; }
+    50% { opacity: 0.3; }
+  }
     </style>
   </head>
   <body class="">
-    <header>
-      <nav
-        class="flex flex-row z-50 fixed top-4 items-center w-full justify-center"
-      >
-        <div
-          class="flex chillax font-medium bg-white/60 backdrop-blur-xs border border-white/30 rounded-3xl px-8 py-3 lg:text-lg md:text-sm text-[14px] items-center gap-6 lg:gap-10"
-        >
-          <!-- class="bg-black/20 backdrop-blur-lg border border-white/30 rounded-2xl px-8 py-3" -->
+    <header class="relative overflow-hidden min-h-screen bg-white">
+  
+  <!-- Subtle Animated SVG Elements -->
+  <svg class="absolute inset-0 w-full h-full pointer-events-none" xmlns="http://www.w3.org/2000/svg">
+    
+    <!-- Large slow-rotating ring in the background -->
+    <g class="rotate-slow" opacity="0.08">
+      <circle cx="50%" cy="45%" r="280" fill="none" stroke="#000" stroke-width="1"/>
+    </g>
+    
+    <!-- Floating gentle circles -->
+    <circle class="float-gentle pulse-gentle" cx="18%" cy="28%" r="120" fill="none" stroke="#000" stroke-width="0.5"/>
+    <circle class="float-gentle pulse-gentle" cx="82%" cy="65%" r="150" fill="none" stroke="#000" stroke-width="0.5"/>
+    
+    <!-- Small accent dots -->
+    <circle cx="25%" cy="35%" r="3" fill="#000" opacity="0.2"/>
+    <circle cx="75%" cy="55%" r="2" fill="#000" opacity="0.15"/>
+    <circle cx="60%" cy="30%" r="2.5" fill="#000" opacity="0.2"/>
+    
+  </svg>
 
-          <a href="" class="text-black hover:text-black transition-colors"
-            >Work</a
-          >
-          <a href="" class="text-black hover:text-black transition-colors"
-            >About</a
-          >
-          <!-- <a href="" class="text-black hover:text-black transition-colors"
-            >Play</a
-          > -->
-          <a href="" class="text-black hover:text-black transition-colors"
-            >Notes</a
-          >
-          <a href="" class="text-black hover:text-black transition-colors"
-            >Contact</a
-          >
-        </div>
-      </nav>
-      <!-- intro text -->
-      <h1
-        class="text-[50px] lg:text-[7.3rem] mt-32 lg:mt-35 intro leading-13 lg:leading-27 text-black text-center"
-      >
-        Hi. I'm Allwell. <br />
-        FrontEnd Dev.
-      </h1>
+  <nav class="flex flex-row z-50 fixed top-4 items-center w-full justify-center">
+    <div class="flex chillax font-medium bg-white/80 backdrop-blur-xs border border-black/10 rounded-3xl px-8 py-3 lg:text-lg md:text-sm text-[14.5px] items-center gap-6 lg:gap-10">
+      <a href="" class="text-black hover:text-gray-600 transition-colors">Work</a>
+      <a href="" class="text-black hover:text-gray-600 transition-colors">About</a>
+      <a href="" class="text-black hover:text-gray-600 transition-colors">Notes</a>
+      <a href="" class="text-black hover:text-gray-600 transition-colors">Contact</a>
+    </div>
+  </nav>
+  
+  <!-- intro text -->
+  <h1 class="relative z-10 text-[55px] lg:text-[7.3rem] mt-32 lg:mt-35 intro leading-13 lg:leading-27 text-black text-center">
+    Hi. I'm Allwell. <br />
+    FrontEnd Dev.
+  </h1>
 
-      <!-- passionate frontend dev -->
-      <h1
-        class="text-black lg:text-xl text-[0.9rem] lg:max-w-4xl mx-auto font-medium text-center mt-12 lg:mt-15"
-      >
-        Passionate Frontend Developer focused on crafting accessible,
-        high-performance, and user-centric interfaces.
-      </h1>
+  <!-- passionate frontend dev -->
+  <h1 class="relative z-10 text-black lg:text-xl text-[0.9rem] lg:max-w-4xl mx-auto font-medium text-center mt-12 lg:mt-15">
+    Passionate Frontend Developer focused on crafting accessible,
+    high-performance, and user-centric interfaces.
+  </h1>
 
-      <a href="" class="bg-black text-white block w-fit mx-auto text-center px-8 py-4 rounded-[18px] hover:bg-gray-800 transition-colors mt-8">
-  Get In Touch
-</a>
-    </header>
+  <a href="" class="relative z-10 bg-black text-white block w-fit mx-auto mt-8 text-center px-8 py-4 rounded-[18px] hover:bg-gray-800 transition-colors">
+    Get In Touch
+  </a>
+</header>
 
      <!-- Projects Section -->
   <section class="mt-20 p-4 lg:p-8">
