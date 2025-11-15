@@ -1,115 +1,502 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="./src/output.css" rel="stylesheet">
-  <link href="https://api.fontshare.com/v2/css?f[]=chillax@200,300,400,500,600,700&display=swap" rel="stylesheet">
-  <link rel="preload" href="./Acorn Font/Acorn-Bold.woff2" as="font" type="font/woff2" crossorigin>
-  <style>
-    @font-face {
-      font-family: 'Acorn';
-      src: url('./Acorn Font/Acorn-SemiBold.woff2') format('woff2');
-      font-weight: normal;
-      font-style: normal;
-      font-display: swap;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./src/output.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./src/styles2.css" />
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=chillax@200,300,400,500,600,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="preload"
+      href="./Acorn Font/Acorn-Bold.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <style>
+      @font-face {
+        font-family: "Acorn";
+        src: url("./Acorn Font/Acorn-SemiBold.woff2") format("woff2");
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
 
-    .intro {
-      font-family: 'Acorn', sans-serif;
-    }
+      .intro {
+        font-family: "Acorn", sans-serif;
+      }
 
-    body {
-      font-family: 'Chillax', sans-serif;
-    }
+      body {
+        font-family: "Chillax", sans-serif;
+      }
+    </style>
+  </head>
+  <body class="">
+    <header>
+      <nav
+        class="flex flex-row z-50 fixed top-4 items-center w-full justify-center"
+      >
+        <div
+          class="flex chillax font-medium bg-white/60 backdrop-blur-xs border border-white/30 rounded-3xl px-8 py-3 lg:text-lg md:text-sm text-[14px] items-center gap-6 lg:gap-10"
+        >
+          <!-- class="bg-black/20 backdrop-blur-lg border border-white/30 rounded-2xl px-8 py-3" -->
 
-    .star-right {
-      position: absolute;
-      top: 50%;
-      right: -60px;
-      transform: translateY(-50%);
-      width: 40px;
-      height: 40px;
-    }
-
-    .star-left {
-      position: absolute;
-      bottom: -20px;
-      left: -50px;
-      width: 30px;
-      height: 30px;
-    }
-
-    .name-container {
-      position: relative;
-      display: inline-block;
-    }
-
-    .developer-container {
-      position: relative;
-      display: inline-block;
-    }
-  </style>
-</head>
-<body class="bg-[#a0430a]">
-  <header>
-    <nav class="flex flex-row items-center w-full justify-center">
-      <div class="flex chillax font-medium pt-8 lg:text-lg md:text-sm items-center gap-6 lg:gap-10">
-          <a href="" class="text-[#dfe8e6] hover:text-black transition-colors">Work</a>
-          <a href="" class="text-[#dfe8e6] hover:text-black transition-colors">About</a>
-          <a href="" class="text-[#dfe8e6] hover:text-black transition-colors">Play</a>
-          <a href="" class="text-[#dfe8e6] hover:text-black transition-colors">Notes</a>
-          <a href="" class="text-[#dfe8e6] hover:text-black transition-colors">Contact</a>
+          <a href="" class="text-black hover:text-black transition-colors"
+            >Work</a
+          >
+          <a href="" class="text-black hover:text-black transition-colors"
+            >About</a
+          >
+          <!-- <a href="" class="text-black hover:text-black transition-colors"
+            >Play</a
+          > -->
+          <a href="" class="text-black hover:text-black transition-colors"
+            >Notes</a
+          >
+          <a href="" class="text-black hover:text-black transition-colors"
+            >Contact</a
+          >
         </div>
-    </nav>
-    
-    <div class="text-center mt-30">
-      <h1 class="text-2xl lg:text-[7.3rem] intro leading-25 text-[#dfe8e6]">
-        <span class="name-container">
-          Hi. I'm Allwell.
-          <div class="star-right">
-            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-              <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-              <g id="SVGRepo_iconCarrier">
-                <path d="M10.5766 8.70419C11.2099 7.56806 11.5266 7 12 7C12.4734 7 12.7901 7.56806 13.4234 8.70419L13.5873 8.99812C13.7672 9.32097 13.8572 9.48239 13.9975 9.5889C14.1378 9.69541 14.3126 9.73495 14.6621 9.81402L14.9802 9.88601C16.2101 10.1643 16.825 10.3034 16.9713 10.7739C17.1176 11.2443 16.6984 11.7345 15.86 12.715L15.643 12.9686C15.4048 13.2472 15.2857 13.3865 15.2321 13.5589C15.1785 13.7312 15.1965 13.9171 15.2325 14.2888L15.2653 14.6272C15.3921 15.9353 15.4554 16.5894 15.0724 16.8801C14.6894 17.1709 14.1137 16.9058 12.9622 16.3756L12.6643 16.2384C12.337 16.0878 12.1734 16.0124 12 16.0124C11.8266 16.0124 11.663 16.0878 11.3357 16.2384L11.0378 16.3756C9.88634 16.9058 9.31059 17.1709 8.92757 16.8801C8.54456 16.5894 8.60794 15.9353 8.7347 14.6272L8.76749 14.2888C8.80351 13.9171 8.82152 13.7312 8.76793 13.5589C8.71434 13.3865 8.59521 13.2472 8.35696 12.9686L8.14005 12.715C7.30162 11.7345 6.88241 11.2443 7.02871 10.7739C7.17501 10.3034 7.78993 10.1643 9.01977 9.88601L9.33794 9.81402C9.68743 9.73495 9.86217 9.69541 10.0025 9.5889C10.1428 9.48239 10.2328 9.32097 10.4127 8.99812L10.5766 8.70419Z" fill="#ffffff"></path>
-                <path opacity="0.8" fill-rule="evenodd" clip-rule="evenodd" d="M12 1.25C12.4142 1.25 12.75 1.58579 12.75 2V4C12.75 4.41421 12.4142 4.75 12 4.75C11.5858 4.75 11.25 4.41421 11.25 4V2C11.25 1.58579 11.5858 1.25 12 1.25ZM1.25 12C1.25 11.5858 1.58579 11.25 2 11.25H4C4.41421 11.25 4.75 11.5858 4.75 12C4.75 12.4142 4.41421 12.75 4 12.75H2C1.58579 12.75 1.25 12.4142 1.25 12ZM19.25 12C19.25 11.5858 19.5858 11.25 20 11.25H22C22.4142 11.25 22.75 11.5858 22.75 12C22.75 12.4142 22.4142 12.75 22 12.75H20C19.5858 12.75 19.25 12.4142 19.25 12ZM12 19.25C12.4142 19.25 12.75 19.5858 12.75 20V22C12.75 22.4142 12.4142 22.75 12 22.75C11.5858 22.75 11.25 22.4142 11.25 22V20C11.25 19.5858 11.5858 19.25 12 19.25Z" fill="#ffffff"></path>
-                <g opacity="0.5">
-                  <path d="M18.5304 5.46967C18.8233 5.76256 18.8233 6.23744 18.5304 6.53033L18.1872 6.87359C17.8943 7.16648 17.4194 7.16648 17.1265 6.87359C16.8336 6.5807 16.8336 6.10583 17.1265 5.81293L17.4698 5.46967C17.7627 5.17678 18.2376 5.17678 18.5304 5.46967Z" fill="#ffffff"></path>
-                  <path d="M5.46967 5.46979C5.76256 5.17689 6.23744 5.17689 6.53033 5.46979L6.87359 5.81305C7.16648 6.10594 7.16648 6.58081 6.87359 6.87371C6.5807 7.1666 6.10583 7.1666 5.81293 6.87371L5.46967 6.53045C5.17678 6.23755 5.17678 5.76268 5.46967 5.46979Z" fill="#ffffff"></path>
-                  <path d="M6.87348 17.1266C7.16637 17.4195 7.16637 17.8944 6.87348 18.1873L6.53043 18.5303C6.23754 18.8232 5.76266 18.8232 5.46977 18.5303C5.17688 18.2375 5.17688 17.7626 5.46977 17.4697L5.81282 17.1266C6.10571 16.8337 6.58058 16.8337 6.87348 17.1266Z" fill="#ffffff"></path>
-                  <path d="M17.1265 17.1269C17.4194 16.834 17.8943 16.834 18.1872 17.1269L18.5302 17.4699C18.8231 17.7628 18.8231 18.2377 18.5302 18.5306C18.2373 18.8235 17.7624 18.8235 17.4695 18.5306L17.1265 18.1875C16.8336 17.8946 16.8336 17.4198 17.1265 17.1269Z" fill="#ffffff"></path>
-                </g>
-              </g>
-            </svg>
-          </div>
-        </span>
-        <br>
-        <span class="developer-container">
-          A Developer.
-          <div class="star-left">
-            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-              <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-              <g id="SVGRepo_iconCarrier">
-                <path d="M10.5766 8.70419C11.2099 7.56806 11.5266 7 12 7C12.4734 7 12.7901 7.56806 13.4234 8.70419L13.5873 8.99812C13.7672 9.32097 13.8572 9.48239 13.9975 9.5889C14.1378 9.69541 14.3126 9.73495 14.6621 9.81402L14.9802 9.88601C16.2101 10.1643 16.825 10.3034 16.9713 10.7739C17.1176 11.2443 16.6984 11.7345 15.86 12.715L15.643 12.9686C15.4048 13.2472 15.2857 13.3865 15.2321 13.5589C15.1785 13.7312 15.1965 13.9171 15.2325 14.2888L15.2653 14.6272C15.3921 15.9353 15.4554 16.5894 15.0724 16.8801C14.6894 17.1709 14.1137 16.9058 12.9622 16.3756L12.6643 16.2384C12.337 16.0878 12.1734 16.0124 12 16.0124C11.8266 16.0124 11.663 16.0878 11.3357 16.2384L11.0378 16.3756C9.88634 16.9058 9.31059 17.1709 8.92757 16.8801C8.54456 16.5894 8.60794 15.9353 8.7347 14.6272L8.76749 14.2888C8.80351 13.9171 8.82152 13.7312 8.76793 13.5589C8.71434 13.3865 8.59521 13.2472 8.35696 12.9686L8.14005 12.715C7.30162 11.7345 6.88241 11.2443 7.02871 10.7739C7.17501 10.3034 7.78993 10.1643 9.01977 9.88601L9.33794 9.81402C9.68743 9.73495 9.86217 9.69541 10.0025 9.5889C10.1428 9.48239 10.2328 9.32097 10.4127 8.99812L10.5766 8.70419Z" fill="#ffffff"></path>
-                <path opacity="0.8" fill-rule="evenodd" clip-rule="evenodd" d="M12 1.25C12.4142 1.25 12.75 1.58579 12.75 2V4C12.75 4.41421 12.4142 4.75 12 4.75C11.5858 4.75 11.25 4.41421 11.25 4V2C11.25 1.58579 11.5858 1.25 12 1.25ZM1.25 12C1.25 11.5858 1.58579 11.25 2 11.25H4C4.41421 11.25 4.75 11.5858 4.75 12C4.75 12.4142 4.41421 12.75 4 12.75H2C1.58579 12.75 1.25 12.4142 1.25 12ZM19.25 12C19.25 11.5858 19.5858 11.25 20 11.25H22C22.4142 11.25 22.75 11.5858 22.75 12C22.75 12.4142 22.4142 12.75 22 12.75H20C19.5858 12.75 19.25 12.4142 19.25 12ZM12 19.25C12.4142 19.25 12.75 19.5858 12.75 20V22C12.75 22.4142 12.4142 22.75 12 22.75C11.5858 22.75 11.25 22.4142 11.25 22V20C11.25 19.5858 11.5858 19.25 12 19.25Z" fill="#ffffff"></path>
-                <g opacity="0.5">
-                  <path d="M18.5304 5.46967C18.8233 5.76256 18.8233 6.23744 18.5304 6.53033L18.1872 6.87359C17.8943 7.16648 17.4194 7.16648 17.1265 6.87359C16.8336 6.5807 16.8336 6.10583 17.1265 5.81293L17.4698 5.46967C17.7627 5.17678 18.2376 5.17678 18.5304 5.46967Z" fill="#ffffff"></path>
-                  <path d="M5.46967 5.46979C5.76256 5.17689 6.23744 5.17689 6.53033 5.46979L6.87359 5.81305C7.16648 6.10594 7.16648 6.58081 6.87359 6.87371C6.5807 7.1666 6.10583 7.1666 5.81293 6.87371L5.46967 6.53045C5.17678 6.23755 5.17678 5.76268 5.46967 5.46979Z" fill="#ffffff"></path>
-                  <path d="M6.87348 17.1266C7.16637 17.4195 7.16637 17.8944 6.87348 18.1873L6.53043 18.5303C6.23754 18.8232 5.76266 18.8232 5.46977 18.5303C5.17688 18.2375 5.17688 17.7626 5.46977 17.4697L5.81282 17.1266C6.10571 16.8337 6.58058 16.8337 6.87348 17.1266Z" fill="#ffffff"></path>
-                  <path d="M17.1265 17.1269C17.4194 16.834 17.8943 16.834 18.1872 17.1269L18.5302 17.4699C18.8231 17.7628 18.8231 18.2377 18.5302 18.5306C18.2373 18.8235 17.7624 18.8235 17.4695 18.5306L17.1265 18.1875C16.8336 17.8946 16.8336 17.4198 17.1265 17.1269Z" fill="#ffffff"></path>
-                </g>
-              </g>
-            </svg>
-          </div>
-        </span>
+      </nav>
+      <!-- intro text -->
+      <h1
+        class="text-[50px] lg:text-[7.3rem] mt-32 lg:mt-35 intro leading-13 lg:leading-27 text-black text-center"
+      >
+        Hi. I'm Allwell. <br />
+        FrontEnd Dev.
       </h1>
-    </div>
-    
-    <h1 class="text-[#dfe8e6] text-xl max-w-3xl mx-auto font-medium text-center mt-15">
-      I'm passionate about crafting experiences that are engaging, accessible, and user-centric.
+
+      <!-- passionate frontend dev -->
+      <h1
+        class="text-black lg:text-xl text-[0.9rem] lg:max-w-4xl mx-auto font-medium text-center mt-12 lg:mt-15"
+      >
+        Passionate Frontend Developer focused on crafting accessible,
+        high-performance, and user-centric interfaces.
+      </h1>
+
+      <a href="" class="bg-black text-white block w-fit mx-auto text-center px-8 py-4 rounded-[18px] hover:bg-gray-800 transition-colors mt-8">
+  Get In Touch
+</a>
+    </header>
+
+     <!-- Projects Section -->
+  <section class="mt-20 p-4 lg:p-8">
+    <h1 class="intro text-5xl text-black text-center pb-16 lg:text-[7.1rem]">
+      Projects.
     </h1>
-  </header>
-</body>
+
+     <!-- 1st Project row-->
+    <div class="flex lg:flex-row flex-col lg:px-12 lg:space-x-16 justify-center p-4 lg:p-8 mb-10">
+      <!-- Project 1 -->
+      <div class="flex flex-col lg:w-3/6 w-full lg:aspect-auto h-fit bg-white shadow-2xl rounded-3xl lg:rounded-[40px] overflow-hidden mb-6 lg:mb-0">
+        <div>
+         <!-- <div class="h-7 w-7 text-black bg-white rounded-full absolute">
+          <h1 class="font-bold text-center ">→</h1> 
+         </div> -->
+          <img src="./Images/Incomio-home-project.png" alt="Project 1" class="project-image">
+        </div>
+         <div class="">
+         </div>
+         <h2 class="intro text-2xl lg:text-2xl ml-3 mt-3">Incomio</h2>
+         <p class="text-xs lg:text-sm ml-3 mb-4 mt-2 leading-relaxed">
+            Real-time analytics dashboard with data visualization, custom reports, and performance metrics tracking.
+          </p>
+          <div class="mb-6">
+      <!-- <h3 class="font-semibold text-lg mb-3">Tech Stack:</h3> -->
+      <div class="flex flex-wrap ml-3 gap-2">
+        <span class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-xs">React</span>
+        <span class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-xs">D3.js</span>
+        <span class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-xs">Express</span>
+        <span class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-xs">PostgreSQL</span>
+      </div>
+    </div>
+    <!-- <button class="bg-black text-white px-4 ml-3 py-1.5 rounded-full hover:bg-gray-800 transition-colors w-2/3 mb-5 lg:w-2/4">
+    View Project
+  </button> -->
+      </div>
+
+      <!-- Project 2 -->
+      <div class="flex flex-col lg:w-3/6 w-full lg:aspect-auto h-fit bg-white shadow-2xl rounded-3xl lg:rounded-[40px] overflow-hidden mb-6 lg:mb-0">
+        <div>
+         <!-- <div class="h-7 w-7 text-black bg-white rounded-full absolute">
+          <h1 class="font-bold text-center ">→</h1> 
+         </div> -->
+          <img src="./Images/Ovulan-project.png" alt="Project 1" class="project-image">
+        </div>
+         <div class="">
+         </div>
+         <h2 class="intro text-2xl lg:text-2xl ml-3 mt-3">Incomio</h2>
+         <p class="text-xs lg:text-sm ml-3 mb-4 mt-2 leading-relaxed">
+            Real-time analytics dashboard with data visualization, custom reports, and performance metrics tracking.
+          </p>
+          <div class="mb-6">
+      <!-- <h3 class="font-semibold text-lg mb-3">Tech Stack:</h3> -->
+      <div class="flex flex-wrap ml-3 gap-2">
+        <span class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-xs">React</span>
+        <span class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-xs">D3.js</span>
+        <span class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-xs">Express</span>
+        <span class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-xs">PostgreSQL</span>
+      </div>
+    </div>
+    <!-- <button class="bg-black text-white px-4 ml-3 py-1.5 rounded-full hover:bg-gray-800 transition-colors w-2/3 mb-5 lg:w-2/4">
+    View Project
+  </button> -->
+      </div>
+    </div>
+
+    <!-- 2nd Project row-->
+    <div class="flex lg:flex-row flex-col lg:px-12 lg:space-x-16 justify-center p-4 lg:p-8 mb-10">
+      <!-- Project 1 -->
+      <div class="flex flex-col lg:w-3/6 w-full lg:aspect-auto h-fit bg-white shadow-2xl rounded-3xl lg:rounded-[40px] overflow-hidden mb-6 lg:mb-0">
+        <div>
+         <!-- <div class="h-7 w-7 text-black bg-white rounded-full absolute">
+          <h1 class="font-bold text-center ">→</h1> 
+         </div> -->
+          <img src="./Images/Incomio-home-project.png" alt="Project 1" class="project-image">
+        </div>
+         <div class="">
+         </div>
+         <h2 class="intro text-2xl lg:text-2xl ml-3 mt-3">Incomio</h2>
+         <p class="text-xs lg:text-sm ml-3 mb-4 mt-2 leading-relaxed">
+            Real-time analytics dashboard with data visualization, custom reports, and performance metrics tracking.
+          </p>
+          <div class="mb-6">
+      <!-- <h3 class="font-semibold text-lg mb-3">Tech Stack:</h3> -->
+      <div class="flex flex-wrap ml-3 gap-2">
+        <span class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-xs">React</span>
+        <span class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-xs">D3.js</span>
+        <span class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-xs">Express</span>
+        <span class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-xs">PostgreSQL</span>
+      </div>
+    </div>
+    <!-- <button class="bg-black text-white px-4 ml-3 py-1.5 rounded-full hover:bg-gray-800 transition-colors w-2/3 mb-5 lg:w-2/4">
+    View Project
+  </button> -->
+      </div>
+
+      <!-- Project 2 -->
+      <div class="flex flex-col lg:w-3/6 w-full lg:aspect-auto h-fit bg-white shadow-2xl rounded-3xl lg:rounded-[40px] overflow-hidden mb-6 lg:mb-0">
+        <div>
+         <!-- <div class="h-7 w-7 text-black bg-white rounded-full absolute">
+          <h1 class="font-bold text-center ">→</h1> 
+         </div> -->
+          <img src="./Images/Incomio-home-project.png" alt="Project 1" class="project-image">
+        </div>
+         <div class="">
+         </div>
+         <h2 class="intro text-2xl lg:text-2xl ml-3 mt-3">Incomio</h2>
+         <p class="text-xs lg:text-sm ml-3 mb-4 mt-2 leading-relaxed">
+            Real-time analytics dashboard with data visualization, custom reports, and performance metrics tracking.
+          </p>
+          <div class="mb-6">
+      <!-- <h3 class="font-semibold text-lg mb-3">Tech Stack:</h3> -->
+      <div class="flex flex-wrap ml-3 gap-2">
+        <span class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-xs">React</span>
+        <span class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-xs">D3.js</span>
+        <span class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-xs">Express</span>
+        <span class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-xs">PostgreSQL</span>
+      </div>
+    </div>
+    <!-- <button class="bg-black text-white px-4 ml-3 py-1.5 rounded-full hover:bg-gray-800 transition-colors w-2/3 mb-5 lg:w-2/4">
+    View Project
+  </button> -->
+      </div>
+    </div>
+
+     <!-- 3rd Project row-->
+    <div class="flex lg:flex-row flex-col lg:px-12 lg:space-x-16 justify-center p-4 lg:p-8 mb-10">
+      <!-- Project 1 -->
+      <div class="flex flex-col lg:w-3/6 w-full lg:aspect-auto h-fit bg-white shadow-2xl rounded-3xl lg:rounded-[40px] overflow-hidden mb-6 lg:mb-0">
+        <div>
+         <!-- <div class="h-7 w-7 text-black bg-white rounded-full absolute">
+          <h1 class="font-bold text-center ">→</h1> 
+         </div> -->
+          <img src="./Images/Incomio-home-project.png" alt="Project 1" class="project-image">
+        </div>
+         <div class="">
+         </div>
+         <h2 class="intro text-2xl lg:text-2xl ml-3 mt-3">Incomio</h2>
+         <p class="text-xs lg:text-sm ml-3 mb-4 mt-2 leading-relaxed">
+            Real-time analytics dashboard with data visualization, custom reports, and performance metrics tracking.
+          </p>
+          <div class="mb-6">
+      <!-- <h3 class="font-semibold text-lg mb-3">Tech Stack:</h3> -->
+      <div class="flex flex-wrap ml-3 gap-2">
+        <span class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-xs">React</span>
+        <span class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-xs">D3.js</span>
+        <span class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-xs">Express</span>
+        <span class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-xs">PostgreSQL</span>
+      </div>
+    </div>
+    <!-- <button class="bg-black text-white px-4 ml-3 py-1.5 rounded-full hover:bg-gray-800 transition-colors w-2/3 mb-5 lg:w-2/4">
+    View Project
+  </button> -->
+      </div>
+
+      <!-- Project 2 -->
+      <div class="flex flex-col lg:w-3/6 w-full lg:aspect-auto h-fit bg-white shadow-2xl rounded-3xl lg:rounded-[40px] overflow-hidden mb-6 lg:mb-0">
+        <div>
+         <!-- <div class="h-7 w-7 text-black bg-white rounded-full absolute">
+          <h1 class="font-bold text-center ">→</h1> 
+         </div> -->
+          <img src="./Images/Incomio-home-project.png" alt="Project 1" class="project-image">
+        </div>
+         <div class="">
+         </div>
+         <h2 class="intro text-2xl lg:text-2xl ml-3 mt-3">Incomio</h2>
+         <p class="text-xs lg:text-sm ml-3 mb-4 mt-2 leading-relaxed">
+            Real-time analytics dashboard with data visualization, custom reports, and performance metrics tracking.
+          </p>
+          <div class="mb-6">
+      <!-- <h3 class="font-semibold text-lg mb-3">Tech Stack:</h3> -->
+      <div class="flex flex-wrap ml-3 gap-2">
+        <span class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-xs">React</span>
+        <span class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-xs">D3.js</span>
+        <span class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-xs">Express</span>
+        <span class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-xs">PostgreSQL</span>
+      </div>
+    </div>
+    <!-- <button class="bg-black text-white px-4 ml-3 py-1.5 rounded-full hover:bg-gray-800 transition-colors w-2/3 mb-5 lg:w-2/4">
+    View Project
+  </button> -->
+      </div>
+    </div>
+  </section>
+
+    <!-- Tech Stack Section -->
+  <section class="mt-20 max-w-7xl mx-auto px-4">
+    <h1 class="intro text-5xl text-black text-center pb-16 lg:text-[7.1rem]">
+      Tech Stack.
+    </h1>
+
+    <div class="bg-black w-full rounded-[50px] p-8 lg:p-12">
+      
+      <!-- Frontend Technologies -->
+      <div class="mb-12">
+        <h2 class="text-white text-2xl lg:text-4xl font-semibold mb-6 text-center lg:text-left">Frontend</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
+          
+          <!-- HTML -->
+          <div class="tech-card bg-white rounded-2xl p-6 flex flex-col items-center justify-center">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" class="w-16 h-16 mb-3">
+            <p class="text-gray-800 font-medium text-sm">HTML5</p>
+          </div>
+
+          <!-- CSS -->
+          <div class="tech-card bg-white rounded-2xl p-6 flex flex-col items-center justify-center">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" class="w-16 h-16 mb-3">
+            <p class="text-gray-800 font-medium text-sm">CSS3</p>
+          </div>
+
+          <!-- Tailwind -->
+          <div class="tech-card bg-white rounded-2xl p-6 flex flex-col items-center justify-center">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind CSS" class="w-16 h-16 mb-3">
+            <p class="text-gray-800 font-medium text-sm">Tailwind</p>
+          </div>
+
+          <!-- Bootstrap -->
+          <div class="tech-card bg-white rounded-2xl p-6 flex flex-col items-center justify-center">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap" class="w-16 h-16 mb-3">
+            <p class="text-gray-800 font-medium text-sm">Bootstrap</p>
+          </div>
+
+          <!-- JavaScript -->
+          <div class="tech-card bg-white rounded-2xl p-6 flex flex-col items-center justify-center">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" class="w-16 h-16 mb-3">
+            <p class="text-gray-800 font-medium text-sm">JavaScript</p>
+          </div>
+
+          <!-- jQuery -->
+          <div class="tech-card bg-white rounded-2xl p-6 flex flex-col items-center justify-center">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-original.svg" alt="jQuery" class="w-16 h-16 mb-3">
+            <p class="text-gray-800 font-medium text-sm">jQuery</p>
+          </div>
+
+          <!-- React -->
+          <div class="tech-card bg-white rounded-2xl p-6 flex flex-col items-center justify-center">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" class="w-16 h-16 mb-3">
+            <p class="text-gray-800 font-medium text-sm">React</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Backend Technologies -->
+      <div class="mb-12">
+        <h2 class="text-white text-2xl lg:text-4xl font-semibold mb-6 text-center lg:text-left">Backend</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
+          
+          <!-- Node.js -->
+          <div class="tech-card bg-white rounded-2xl p-6 flex flex-col items-center justify-center">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" class="w-16 h-16 mb-3">
+            <p class="text-gray-800 font-medium text-sm">Node.js</p>
+          </div>
+
+          <!-- Express -->
+          <div class="tech-card bg-white rounded-2xl p-6 flex flex-col items-center justify-center">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="Express" class="w-16 h-16 mb-3">
+            <p class="text-gray-800 font-medium text-sm">Express</p>
+          </div>
+
+          <!-- MongoDB -->
+          <div class="tech-card bg-white rounded-2xl p-6 flex flex-col items-center justify-center">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" class="w-16 h-16 mb-3">
+            <p class="text-gray-800 font-medium text-sm">MongoDB</p>
+          </div>
+
+          <!-- MySQL -->
+          <div class="tech-card bg-white rounded-2xl p-6 flex flex-col items-center justify-center">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" class="w-16 h-16 mb-3">
+            <p class="text-gray-800 font-medium text-sm">MySQL</p>
+          </div>
+
+          <!-- API -->
+          <div class="tech-card bg-white rounded-2xl p-6 flex flex-col items-center justify-center">
+            <svg class="w-16 h-16 mb-3 text-gray-700" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M14.23 12.004a2.236 2.236 0 0 1-2.235 2.236 2.236 2.236 0 0 1-2.236-2.236 2.236 2.236 0 0 1 2.235-2.236 2.236 2.236 0 0 1 2.236 2.236zm2.648-10.69c-1.346 0-3.107.96-4.888 2.622-1.78-1.653-3.542-2.602-4.887-2.602-.41 0-.783.093-1.106.278-1.375.793-1.683 3.264-.973 6.365C1.98 8.917 0 10.42 0 12.004c0 1.59 1.99 3.097 5.043 4.03-.704 3.113-.39 5.588.988 6.38.32.187.69.275 1.102.275 1.345 0 3.107-.96 4.888-2.624 1.78 1.654 3.542 2.603 4.887 2.603.41 0 .783-.09 1.106-.275 1.374-.792 1.683-3.263.973-6.365C22.02 15.096 24 13.59 24 12.004c0-1.59-1.99-3.097-5.043-4.032.704-3.11.39-5.587-.988-6.38a2.167 2.167 0 0 0-1.092-.278zm-.005 1.09v.006c.225 0 .406.044.558.127.666.382.955 1.835.73 3.704-.054.46-.142.945-.25 1.44a23.476 23.476 0 0 0-3.107-.534A23.892 23.892 0 0 0 12.769 4.7c1.592-1.48 3.087-2.292 4.105-2.295zm-9.77.02c1.012 0 2.514.808 4.11 2.28-.686.72-1.37 1.537-2.02 2.442a22.73 22.73 0 0 0-3.113.538 15.02 15.02 0 0 1-.254-1.42c-.23-1.868.054-3.32.714-3.707.19-.09.4-.127.563-.132zm4.882 3.05c.455.468.91.992 1.36 1.564-.44-.02-.89-.034-1.345-.034-.46 0-.915.01-1.36.034.44-.572.895-1.096 1.345-1.565zM12 8.1c.74 0 1.477.034 2.202.093.406.582.802 1.203 1.183 1.86.372.64.71 1.29 1.018 1.946-.308.655-.646 1.31-1.013 1.95-.38.66-.773 1.288-1.18 1.87a25.64 25.64 0 0 1-4.412.005 26.64 26.64 0 0 1-1.183-1.86c-.372-.64-.71-1.29-1.018-1.946a25.17 25.17 0 0 1 1.013-1.954c.38-.66.773-1.286 1.18-1.868A25.245 25.245 0 0 1 12 8.098zm-3.635.254c-.24.377-.48.763-.704 1.16-.225.39-.435.782-.635 1.174-.265-.656-.49-1.31-.676-1.947.64-.15 1.315-.283 2.015-.386zm7.26 0c.695.103 1.365.23 2.006.387-.18.632-.405 1.282-.66 1.933a25.952 25.952 0 0 0-1.345-2.32zm3.063.675c.484.15.944.317 1.375.498 1.732.74 2.852 1.708 2.852 2.476-.005.768-1.125 1.74-2.857 2.475-.42.18-.88.342-1.355.493a23.966 23.966 0 0 0-1.1-2.98c.45-1.017.81-2.01 1.085-2.964zm-13.395.004c.278.96.645 1.957 1.1 2.98a23.142 23.142 0 0 0-1.086 2.964c-.484-.15-.944-.318-1.37-.5-1.732-.737-2.852-1.706-2.852-2.474 0-.768 1.12-1.742 2.852-2.476.42-.18.88-.342 1.356-.494zm11.678 4.28c.265.657.49 1.312.676 1.948-.64.157-1.316.29-2.016.39a25.819 25.819 0 0 0 1.341-2.338zm-9.945.02c.2.392.41.783.64 1.175.23.39.465.772.705 1.143a22.005 22.005 0 0 1-2.006-.386c.18-.63.406-1.282.66-1.933zM17.92 16.32c.112.493.2.968.254 1.423.23 1.868-.054 3.32-.714 3.708-.147.09-.338.128-.563.128-1.012 0-2.514-.807-4.11-2.28.686-.72 1.37-1.536 2.02-2.44 1.107-.118 2.154-.3 3.113-.54zm-11.83.01c.96.234 2.006.415 3.107.532.66.905 1.345 1.727 2.035 2.446-1.595 1.483-3.092 2.295-4.11 2.295a1.185 1.185 0 0 1-.553-.132c-.666-.38-.955-1.834-.73-3.703.054-.46.142-.944.25-1.438zm4.56.64c.44.02.89.034 1.345.034.46 0 .915-.01 1.36-.034-.44.572-.895 1.095-1.345 1.565-.455-.47-.91-.993-1.36-1.565z"/>
+            </svg>
+            <p class="text-gray-800 font-medium text-sm">REST API</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Tools & Others -->
+      <div>
+        <h2 class="text-white text-2xl lg:text-4xl font-semibold mb-6 text-center lg:text-left">Tools & Others</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
+          
+          <!-- Git -->
+          <div class="tech-card bg-white rounded-2xl p-6 flex flex-col items-center justify-center">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" class="w-16 h-16 mb-3">
+            <p class="text-gray-800 font-medium text-sm">Git</p>
+          </div>
+
+          <!-- GitHub -->
+          <div class="tech-card bg-white rounded-2xl p-6 flex flex-col items-center justify-center">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" class="w-16 h-16 mb-3">
+            <p class="text-gray-800 font-medium text-sm">GitHub</p>
+          </div>
+
+          <!-- VS Code -->
+          <div class="tech-card bg-white rounded-2xl p-6 flex flex-col items-center justify-center">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code" class="w-16 h-16 mb-3">
+            <p class="text-gray-800 font-medium text-sm">VS Code</p>
+          </div>
+
+          <!-- Figma -->
+          <div class="tech-card bg-white rounded-2xl p-6 flex flex-col items-center justify-center">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma" class="w-16 h-16 mb-3">
+            <p class="text-gray-800 font-medium text-sm">Figma</p>
+          </div>
+
+          <!-- npm -->
+          <div class="tech-card bg-white rounded-2xl p-6 flex flex-col items-center justify-center">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/npm/npm-original-wordmark.svg" alt="npm" class="w-16 h-16 mb-3">
+            <p class="text-gray-800 font-medium text-sm">npm</p>
+          </div>
+
+          <!-- Postman -->
+          <div class="tech-card bg-white rounded-2xl p-6 flex flex-col items-center justify-center">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" alt="Postman" class="w-16 h-16 mb-3">
+            <p class="text-gray-800 font-medium text-sm">Postman</p>
+          </div>
+
+          <!-- Postman -->
+          <div class="tech-card bg-white rounded-2xl p-6 flex flex-col items-center justify-center">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-original.svg" alt="Postman" class="w-16 h-16 mb-3">
+            <p class="text-gray-800 font-medium text-sm">WordPress</p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200 py-12 px-6">
+    <div class="max-w-7xl mx-auto">
+      
+      <!-- Footer Content -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+        
+        <!-- Company Info -->
+        <div>
+          <h3 class="text-black text-2xl font-bold mb-4">Dev.Zuko</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Front-end developer that blends quality performance with beautiful design and user experience.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="text-black font-bold mb-4">Quick Links</h4>
+          <ul class="space-y-2">
+            <li><a href="./index.html" target="_blank" class="text-gray-600 hover:text-black transition-colors text-sm">Home</a></li>
+            <li><a href="#difference" class="text-gray-600 hover:text-black transition-colors text-sm">About</a></li>
+            <!-- <li><a href="#difference" class="text-gray-600 hover:text-black transition-colors text-sm">Play</a></li> -->
+            <li><a href="#paths" class="text-gray-600 hover:text-black transition-colors text-sm">Notes</a></li>
+            <li><a href="#platforms" class="text-gray-600 hover:text-black transition-colors text-sm">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact -->
+        <div>
+          <h4 class="text-black font-bold mb-4">Get in Touch</h4>
+          <ul class="space-y-2">
+            <li><a href="mailto:allwellazubike@gmail.com" class="text-gray-600 hover:text-black transition-colors text-sm">allwellazubike@gmail.com</a></li>
+          </ul>
+          <!-- Social Links -->
+          <div class="grid grid-cols-3 gap-1 justify-items-start items-start w-fit mt-4">
+            <!-- Twitter Account -->
+            <a href="https://x.com/faya_lordd?s=21" target="_blank" class="w-8 h-8 flex items-center justify-center transition-colors">
+              <img width="50" height="50" src="https://img.icons8.com/ios-filled/50/twitterx--v1.png" alt="twitterx--v1"/>
+            </a>
+            <!-- instagram -->
+            <a href="https://www.instagram.com/iam__allwell?igsh=ajFiM2dpOWJ1aW1v&utm_source=qr" target="_blank" class="w-8 h-8  flex items-center justify-center transition-colors">
+              <img width="48" height="48" class="" src="https://img.icons8.com/fluency/48/instagram-new.png" alt="instagram-new"/>
+            </a>
+            <!-- linkedin -->
+            <a href="https://www.linkedin.com/in/allwell-azubike-91512a1aa?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" class="w-8 h-8 flex items-center justify-center transition-colors">
+              <img width="48" height="48" src="https://img.icons8.com/color/48/linkedin.png" alt="linkedin"/>
+            </a>
+            <!-- tiktok -->
+             <a href="https://www.tiktok.com/@z.u.k.o.__?_r=1&_t=ZS-91POyHxvt5j" target="_blank" class="w-8 h-8 flex items-center justify-center transition-colors">
+              <img width="48" height="48" src="https://img.icons8.com/color/48/tiktok--v1.png" alt="tiktok--v1"/>
+            </a>
+            <!-- facebook -->
+             <a href="https://www.facebook.com/share/14KBJ9WuZKi/?mibextid=wwXIfr" target="_blank" class="w-8 h-8 flex items-center justify-center transition-colors">
+              <img width="48" height="48" src="https://img.icons8.com/color/48/facebook-new.png" alt="facebook-new"/>
+            </a>
+            <!-- github -->
+             <a href="https://github.com/allwellazubike" target="_blank" class="w-8 h-8 flex items-center justify-center transition-colors">
+              <img width="64" height="64" src="https://img.icons8.com/glyph-neue/64/github.png" alt="github"/>
+            </a>
+
+            
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="border-t border-gray-200 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+        <p class="text-gray-500 text-sm">
+          © Allwell 2025. All rights reserved.
+        </p>
+        <!-- <div class="flex gap-6">
+          <a href="#" class="text-gray-500 hover:text-black transition-colors text-sm">Privacy Policy</a>
+          <a href="#" class="text-gray-500 hover:text-black transition-colors text-sm">Terms of Service</a>
+        </div> -->
+      </div>
+
+    </div>
+  </footer>
+  <script src="./index.js"></script>
+  </body>
 </html>

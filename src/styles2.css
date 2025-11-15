@@ -10,7 +10,30 @@
   background-attachment: fixed;
 }  */
 
+body {
+  background-color: white;
+}
 
+.project-image {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: top;
+    }
+
+/* tech stack animation  */
+.tech-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .tech-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    }
+
+
+html {  scroll-behavior: smooth;
+}
  
 /* body {
   height: 100vh;
