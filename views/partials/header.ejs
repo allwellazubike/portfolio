@@ -1,0 +1,84 @@
+<!-- 
+  This is your NEW Header Partial
+  It contains all your <head> content.
+  Note all paths are updated to be absolute (e.g., "/output.css")
+-->
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- All paths now start with / to load from the 'public' folder -->
+    <link href="/src/output.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles2.css" />
+    
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=chillax@200,300,400,500,600,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="preload"
+      href="/Acorn Font/Acorn-Bold.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <!-- Load Lexend font (casual and modern) for the chatbox -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+      @font-face {
+        font-family: "Acorn";
+        /* Updated path */
+        src: url("/Acorn Font/Acorn-SemiBold.woff2") format("woff2");
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      .intro {
+        font-family: "Acorn", sans-serif;
+      }
+
+      body {
+        font-family: "Chillax", sans-serif;
+      }
+
+      /* --- Chatbox Styles --- */
+      #chat-widget {
+        font-family: 'Lexend', sans-serif;
+      }
+
+      /* Custom scrollbar for chat messages */
+      #chat-messages::-webkit-scrollbar {
+          width: 6px;
+      }
+      #chat-messages::-webkit-scrollbar-track {
+          background: #f1f1f1;
+          border-radius: 10px;
+      }
+      #chat-messages::-webkit-scrollbar-thumb {
+          background: #a8a8a8;
+          border-radius: 10px;
+      }
+      #chat-messages::-webkit-scrollbar-thumb:hover {
+          background: #888;
+      }
+
+      /* Custom scrollbar for horizontal suggestions (if ever needed) */
+      #chat-suggestions::-webkit-scrollbar {
+          height: 4px;
+      }
+      #chat-suggestions::-webkit-scrollbar-track {
+          background: #f1f1f1;
+      }
+      #chat-suggestions::-webkit-scrollbar-thumb {
+          background: #a8a8a8;
+          border-radius: 10px;
+      }
+      #chat-suggestions::-webkit-scrollbar-thumb:hover {
+          background: #888;
+      }
+    </style>
+  </head>

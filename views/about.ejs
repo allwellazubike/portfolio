@@ -1,68 +1,29 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="./src/output.css" rel="stylesheet" />
-    <link rel="stylesheet" href="./src/styles2.css" />
-    <link
-      href="https://api.fontshare.com/v2/css?f[]=chillax@200,300,400,500,600,700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="preload"
-      href="./Acorn Font/Acorn-Bold.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin
-    />
-    <style>
-      @font-face {
-        font-family: "Acorn";
-        src: url("./Acorn Font/Acorn-SemiBold.woff2") format("woff2");
-        font-weight: normal;
-        font-style: normal;
-        font-display: swap;
-      }
+  
+  <!-- This partial includes your <head> -->
+  <%- include('./partials/header.ejs') %>
 
-      .intro {
-        font-family: "Acorn", sans-serif;
-      }
-
-      body {
-        font-family: "Chillax", sans-serif;
-      }
-    </style>
-  </head>
   <body class="">
-    <header>
-      <nav
-        class="flex flex-row z-50 fixed top-4 items-center w-full justify-center"
-      >
-        <div
-          class="flex chillax font-medium bg-white/80 backdrop-blur-xs border border-white/30 rounded-3xl px-8 py-3 lg:text-lg md:text-sm text-[14.5px] items-center gap-6 lg:gap-10"
-        >
-          <!-- class="bg-black/20 backdrop-blur-lg border border-white/30 rounded-2xl px-8 py-3" -->
+    
+    <!-- This partial includes your <nav> -->
+    <%- include('./partials/nav.ejs') %>
 
-          <a href="" class="text-black hover:text-black transition-colors"
-            >Work</a
-          >
-          <a href="./about.html" class="text-black hover:text-black transition-colors"
-            >About</a
-          >
-          <!-- <a href="" class="text-black hover:text-black transition-colors"
-            >Play</a
-          > -->
-          <a href="" class="text-black hover:text-black transition-colors"
-            >Notes</a
-          >
-          <a href="" class="text-black hover:text-black transition-colors"
-            >Contact</a
-          >
-        </div>
-      </nav>
-
-
+    <!-- 
+      This is your PAGE-SPECIFIC content.
+      This is where you would put your "About Me" content.
+    -->
+    <!-- <header class="mt-32 lg:mt-35">
+      <h1 class="text-[55px] lg:text-[7.3rem] intro text-black text-center">
+        About Me
+      </h1>
+      <p class="text-black lg:text-xl text-[0.9rem] lg:max-w-4xl mx-auto font-medium text-center mt-12 lg:mt-15">
+        This is where your about me content would go. Notice how the header,
+        footer, and chatbox all work on this page too!
+      </p>
+    </header>
+     -->
+   
       <!-- intro text -->
       <h1
         class="text-[55px] lg:text-[7.3rem] mt-32 lg:mt-50 intro leading-13 lg:leading-27 text-black text-center"
@@ -218,85 +179,11 @@
   
 </section>
 
-    <!-- Footer -->
-    <footer class="bg-white border-t border-gray-200 py-12 px-6">
-    <div class="max-w-7xl mx-auto">
-      
-      <!-- Footer Content -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-        
-        <!-- Dev Info -->
-        <div>
-          <h3 class="text-black text-2xl font-bold mb-4">Dev.Zuko</h3>
-          <p class="text-gray-600 text-sm leading-relaxed">
-            Front-end developer that blends quality performance with beautiful design and user experience.
-          </p>
-        </div>
+    <!-- This partial includes your <footer> -->
+    <%- include('./partials/footer.ejs') %>
+    
+    <!-- This partial includes your chatbox code -->
+    <%- include('./partials/chatbox.ejs') %>
 
-        <!-- Quick Links -->
-        <div>
-          <h4 class="text-black font-bold mb-4">Quick Links</h4>
-          <ul class="space-y-2">
-            <li><a href="./index.html" target="_blank" class="text-gray-600 hover:text-black transition-colors text-sm">Home</a></li>
-            <li><a href="#difference" class="text-gray-600 hover:text-black transition-colors text-sm">About</a></li>
-            <!-- <li><a href="#difference" class="text-gray-600 hover:text-black transition-colors text-sm">Play</a></li> -->
-            <li><a href="#paths" class="text-gray-600 hover:text-black transition-colors text-sm">Notes</a></li>
-            <li><a href="#platforms" class="text-gray-600 hover:text-black transition-colors text-sm">Contact</a></li>
-          </ul>
-        </div>
-
-        <!-- Contact -->
-        <div>
-          <h4 class="text-black font-bold mb-4">Get in Touch</h4>
-          <ul class="space-y-2">
-            <li><a href="mailto:allwellazubike@gmail.com" class="text-gray-600 hover:text-black transition-colors text-sm">allwellazubike@gmail.com</a></li>
-          </ul>
-          <!-- Social Links -->
-          <div class="grid grid-cols-3 space-x-8 space-y-4 justify-items-start items-start w-fit mt-4">
-            <!-- Twitter Account -->
-            <a href="https://x.com/faya_lordd?s=21" target="_blank" class="w-8 h-8 flex items-center justify-center transition-colors">
-              <img width="50" height="50" src="https://img.icons8.com/ios-filled/50/twitterx--v1.png" alt="twitterx--v1"/>
-            </a>
-            <!-- instagram -->
-            <a href="https://www.instagram.com/iam__allwell?igsh=ajFiM2dpOWJ1aW1v&utm_source=qr" target="_blank" class="w-8 h-8  flex items-center justify-center transition-colors">
-              <img width="48" height="48" class="" src="https://img.icons8.com/fluency/48/instagram-new.png" alt="instagram-new"/>
-            </a>
-            <!-- linkedin -->
-            <a href="https://www.linkedin.com/in/allwell-azubike-91512a1aa?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" class="w-8 h-8 flex items-center justify-center transition-colors">
-              <img width="48" height="48" src="https://img.icons8.com/color/48/linkedin.png" alt="linkedin"/>
-            </a>
-            <!-- tiktok -->
-             <a href="https://www.tiktok.com/@z.u.k.o.__?_r=1&_t=ZS-91POyHxvt5j" target="_blank" class="w-8 h-8 flex items-center justify-center transition-colors">
-              <img width="48" height="48" src="https://img.icons8.com/color/48/tiktok--v1.png" alt="tiktok--v1"/>
-            </a>
-            <!-- facebook -->
-             <a href="https://www.facebook.com/share/14KBJ9WuZKi/?mibextid=wwXIfr" target="_blank" class="w-8 h-8 flex items-center justify-center transition-colors">
-              <img width="48" height="48" src="https://img.icons8.com/color/48/facebook-new.png" alt="facebook-new"/>
-            </a>
-            <!-- github -->
-             <a href="https://github.com/allwellazubike" target="_blank" class="w-8 h-8 flex items-center justify-center transition-colors">
-              <img width="64" height="64" src="https://img.icons8.com/glyph-neue/64/github.png" alt="github"/>
-            </a>
-
-            
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Bottom Bar -->
-      <div class="border-t border-gray-200 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4">
-        <p class="text-gray-500 text-sm">
-          © Allwell 2025. All rights reserved.
-        </p>
-        <!-- <div class="flex gap-6">
-          <a href="#" class="text-gray-500 hover:text-black transition-colors text-sm">Privacy Policy</a>
-          <a href="#" class="text-gray-500 hover:text-black transition-colors text-sm">Terms of Service</a>
-        </div> -->
-      </div>
-
-    </div>
-  </footer>
-  <script src="./index.js"></script>
   </body>
 </html>

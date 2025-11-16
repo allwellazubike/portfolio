@@ -1,66 +1,20 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="./src/output.css" rel="stylesheet" />
-    <link rel="stylesheet" href="./src/styles2.css" />
-    <link
-      href="https://api.fontshare.com/v2/css?f[]=chillax@200,300,400,500,600,700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="preload"
-      href="./Acorn Font/Acorn-Bold.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin
-    />
-    <style>
-      @font-face {
-        font-family: "Acorn";
-        src: url("./Acorn Font/Acorn-SemiBold.woff2") format("woff2");
-        font-weight: normal;
-        font-style: normal;
-        font-display: swap;
-      }
+  
+  <!-- This partial includes your <head> -->
+  <%- include('./partials/header.ejs') %>
 
-      .intro {
-        font-family: "Acorn", sans-serif;
-      }
-
-      body {
-        font-family: "Chillax", sans-serif;
-      }
-    </style>
-  </head>
   <body class="">
-    <header>
-      <nav
-        class="flex flex-row z-50 fixed top-4 items-center w-full justify-center"
-      >
-        <div
-          class="flex chillax font-medium bg-white/80 backdrop-blur-xs border border-white/30 rounded-3xl px-8 py-3 lg:text-lg md:text-sm text-[14.5px] items-center gap-6 lg:gap-10"
-        >
-          <!-- class="bg-black/20 backdrop-blur-lg border border-white/30 rounded-2xl px-8 py-3" -->
+    
+    <!-- This partial includes your <nav> -->
+    <%- include('./partials/nav.ejs') %>
 
-          <a href="" class="text-black hover:text-black transition-colors"
-            >Work</a
-          >
-          <a href="./about.html" class="text-black hover:text-black transition-colors"
-            >About</a
-          >
-          <!-- <a href="" class="text-black hover:text-black transition-colors"
-            >Play</a
-          > -->
-          <a href="" class="text-black hover:text-black transition-colors"
-            >Notes</a
-          >
-          <a href="" class="text-black hover:text-black transition-colors"
-            >Contact</a
-          >
-        </div>
-      </nav>
+
+    <!-- 
+      This is your PAGE-SPECIFIC content.
+      Only the content for the Home Page goes here.
+    -->
+    <header>
       <!-- intro text -->
       <h1
         class="text-[55px] lg:text-[7.3rem] mt-32 lg:mt-35 intro leading-13 lg:leading-27 text-black text-center"
@@ -77,35 +31,30 @@
         high-performance, and user-centric interfaces.
       </h1>
 
-      <a href="" class="bg-black text-white block w-fit mx-auto mt-8 text-center px-8 py-4 rounded-[18px] hover:bg-gray-800 transition-colors mt-8">
-  Get In Touch
-</a>
+      <a href="https://x.com/faya_lordd?s=21" class="bg-black text-white block w-fit mx-auto mt-8 text-center px-8 py-4 rounded-[18px] hover:bg-gray-800 transition-colors mt-8">
+        Get In Touch
+      </a>
     </header>
 
-     <!-- Projects Section -->
+      <!-- Projects Section -->
   <section class="mt-10 lg:mt-20 p-4 lg:p-8">
     <h1 class="intro text-5xl text-black text-center pb-8 lg:text-[7.1rem]">
       Projects.
     </h1>
 
-     <!-- 1st Project row-->
+      <!-- 1st Project row-->
     <div class="flex lg:flex-row flex-col lg:px-12 lg:space-x-16 justify-center p-4 lg:p-8 mb-10">
       <!-- Project 1 -->
       <div class="flex flex-col lg:w-3/6 w-full lg:aspect-auto h-fit bg-white shadow-2xl rounded-3xl lg:rounded-[40px] overflow-hidden mb-6 lg:mb-0">
         <div>
-         <!-- <div class="h-7 w-7 text-black bg-white rounded-full absolute">
-          <h1 class="font-bold text-center ">→</h1> 
-         </div> -->
-          <img src="./Images/Incomio-home-project.png" alt="Project 1" class="project-image">
+          <!-- Updated path -->
+          <img src="/Images/Incomio-home-project.png" alt="Project 1" class="project-image">
         </div>
-         <div class="">
-         </div>
-         <h2 class="intro text-2xl lg:text-2xl ml-3 mt-3">Incomio</h2>
-         <p class="text-xs lg:text-sm ml-3 mb-4 mt-2 leading-relaxed">
+          <h2 class="intro text-2xl lg:text-2xl ml-3 mt-3">Incomio</h2>
+          <p class="text-xs lg:text-sm ml-3 mb-4 mt-2 leading-relaxed">
             Real-time analytics dashboard with data visualization, custom reports, and performance metrics tracking.
           </p>
           <div class="mb-6">
-      <!-- <h3 class="font-semibold text-lg mb-3">Tech Stack:</h3> -->
       <div class="flex flex-wrap ml-3 gap-2">
         <span class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-xs">React</span>
         <span class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-xs">D3.js</span>
@@ -113,27 +62,19 @@
         <span class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-xs">PostgreSQL</span>
       </div>
     </div>
-    <!-- <button class="bg-black text-white px-4 ml-3 py-1.5 rounded-full hover:bg-gray-800 transition-colors w-2/3 mb-5 lg:w-2/4">
-    View Project
-  </button> -->
       </div>
 
       <!-- Project 2 -->
       <div class="flex flex-col lg:w-3/6 w-full lg:aspect-auto h-fit bg-white shadow-2xl rounded-3xl lg:rounded-[40px] overflow-hidden mb-6 lg:mb-0">
         <div>
-         <!-- <div class="h-7 w-7 text-black bg-white rounded-full absolute">
-          <h1 class="font-bold text-center ">→</h1> 
-         </div> -->
-          <img src="./Images/Ovulan-project.png" alt="Project 1" class="project-image">
+          <!-- Updated path -->
+          <img src="/Images/Ovulan-project.png" alt="Project 1" class="project-image">
         </div>
-         <div class="">
-         </div>
-         <h2 class="intro text-2xl lg:text-2xl ml-3 mt-3">Incomio</h2>
-         <p class="text-xs lg:text-sm ml-3 mb-4 mt-2 leading-relaxed">
+          <h2 class="intro text-2xl lg:text-2xl ml-3 mt-3">Incomio</h2>
+          <p class="text-xs lg:text-sm ml-3 mb-4 mt-2 leading-relaxed">
             Real-time analytics dashboard with data visualization, custom reports, and performance metrics tracking.
           </p>
           <div class="mb-6">
-      <!-- <h3 class="font-semibold text-lg mb-3">Tech Stack:</h3> -->
       <div class="flex flex-wrap ml-3 gap-2">
         <span class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-xs">React</span>
         <span class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-xs">D3.js</span>
@@ -141,9 +82,6 @@
         <span class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-xs">PostgreSQL</span>
       </div>
     </div>
-    <!-- <button class="bg-black text-white px-4 ml-3 py-1.5 rounded-full hover:bg-gray-800 transition-colors w-2/3 mb-5 lg:w-2/4">
-    View Project
-  </button> -->
       </div>
     </div>
 
@@ -152,19 +90,14 @@
       <!-- Project 1 -->
       <div class="flex flex-col lg:w-3/6 w-full lg:aspect-auto h-fit bg-white shadow-2xl rounded-3xl lg:rounded-[40px] overflow-hidden mb-6 lg:mb-0">
         <div>
-         <!-- <div class="h-7 w-7 text-black bg-white rounded-full absolute">
-          <h1 class="font-bold text-center ">→</h1> 
-         </div> -->
-          <img src="./Images/Incomio-home-project.png" alt="Project 1" class="project-image">
+          <!-- Updated path -->
+          <img src="/Images/Incomio-home-project.png" alt="Project 1" class="project-image">
         </div>
-         <div class="">
-         </div>
-         <h2 class="intro text-2xl lg:text-2xl ml-3 mt-3">Incomio</h2>
-         <p class="text-xs lg:text-sm ml-3 mb-4 mt-2 leading-relaxed">
+          <h2 class="intro text-2xl lg:text-2xl ml-3 mt-3">Incomio</h2>
+          <p class="text-xs lg:text-sm ml-3 mb-4 mt-2 leading-relaxed">
             Real-time analytics dashboard with data visualization, custom reports, and performance metrics tracking.
           </p>
           <div class="mb-6">
-      <!-- <h3 class="font-semibold text-lg mb-3">Tech Stack:</h3> -->
       <div class="flex flex-wrap ml-3 gap-2">
         <span class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-xs">React</span>
         <span class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-xs">D3.js</span>
@@ -172,27 +105,19 @@
         <span class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-xs">PostgreSQL</span>
       </div>
     </div>
-    <!-- <button class="bg-black text-white px-4 ml-3 py-1.5 rounded-full hover:bg-gray-800 transition-colors w-2/3 mb-5 lg:w-2/4">
-    View Project
-  </button> -->
       </div>
 
       <!-- Project 2 -->
       <div class="flex flex-col lg:w-3/6 w-full lg:aspect-auto h-fit bg-white shadow-2xl rounded-3xl lg:rounded-[40px] overflow-hidden mb-6 lg:mb-0">
         <div>
-         <!-- <div class="h-7 w-7 text-black bg-white rounded-full absolute">
-          <h1 class="font-bold text-center ">→</h1> 
-         </div> -->
-          <img src="./Images/Incomio-home-project.png" alt="Project 1" class="project-image">
+          <!-- Updated path -->
+          <img src="/Images/Incomio-home-project.png" alt="Project 1" class="project-image">
         </div>
-         <div class="">
-         </div>
-         <h2 class="intro text-2xl lg:text-2xl ml-3 mt-3">Incomio</h2>
-         <p class="text-xs lg:text-sm ml-3 mb-4 mt-2 leading-relaxed">
+          <h2 class="intro text-2xl lg:text-2xl ml-3 mt-3">Incomio</h2>
+          <p class="text-xs lg:text-sm ml-3 mb-4 mt-2 leading-relaxed">
             Real-time analytics dashboard with data visualization, custom reports, and performance metrics tracking.
           </p>
           <div class="mb-6">
-      <!-- <h3 class="font-semibold text-lg mb-3">Tech Stack:</h3> -->
       <div class="flex flex-wrap ml-3 gap-2">
         <span class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-xs">React</span>
         <span class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-xs">D3.js</span>
@@ -200,30 +125,22 @@
         <span class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-xs">PostgreSQL</span>
       </div>
     </div>
-    <!-- <button class="bg-black text-white px-4 ml-3 py-1.5 rounded-full hover:bg-gray-800 transition-colors w-2/3 mb-5 lg:w-2/4">
-    View Project
-  </button> -->
       </div>
     </div>
 
-     <!-- 3rd Project row-->
+      <!-- 3rd Project row-->
     <div class="flex lg:flex-row flex-col lg:px-12 lg:space-x-16 justify-center p-4 lg:p-8 mb-10">
       <!-- Project 1 -->
       <div class="flex flex-col lg:w-3/6 w-full lg:aspect-auto h-fit bg-white shadow-2xl rounded-3xl lg:rounded-[40px] overflow-hidden mb-6 lg:mb-0">
         <div>
-         <!-- <div class="h-7 w-7 text-black bg-white rounded-full absolute">
-          <h1 class="font-bold text-center ">→</h1> 
-         </div> -->
-          <img src="./Images/Incomio-home-project.png" alt="Project 1" class="project-image">
+          <!-- Updated path -->
+          <img src="/Images/Incomio-home-project.png" alt="Project 1" class="project-image">
         </div>
-         <div class="">
-         </div>
-         <h2 class="intro text-2xl lg:text-2xl ml-3 mt-3">Incomio</h2>
-         <p class="text-xs lg:text-sm ml-3 mb-4 mt-2 leading-relaxed">
+          <h2 class="intro text-2xl lg:text-2xl ml-3 mt-3">Incomio</h2>
+          <p class="text-xs lg:text-sm ml-3 mb-4 mt-2 leading-relaxed">
             Real-time analytics dashboard with data visualization, custom reports, and performance metrics tracking.
           </p>
           <div class="mb-6">
-      <!-- <h3 class="font-semibold text-lg mb-3">Tech Stack:</h3> -->
       <div class="flex flex-wrap ml-3 gap-2">
         <span class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-xs">React</span>
         <span class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-xs">D3.js</span>
@@ -231,27 +148,19 @@
         <span class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-xs">PostgreSQL</span>
       </div>
     </div>
-    <!-- <button class="bg-black text-white px-4 ml-3 py-1.5 rounded-full hover:bg-gray-800 transition-colors w-2/3 mb-5 lg:w-2/4">
-    View Project
-  </button> -->
       </div>
 
       <!-- Project 2 -->
       <div class="flex flex-col lg:w-3/6 w-full lg:aspect-auto h-fit bg-white shadow-2xl rounded-3xl lg:rounded-[40px] overflow-hidden mb-6 lg:mb-0">
         <div>
-         <!-- <div class="h-7 w-7 text-black bg-white rounded-full absolute">
-          <h1 class="font-bold text-center ">→</h1> 
-         </div> -->
-          <img src="./Images/Incomio-home-project.png" alt="Project 1" class="project-image">
+          <!-- Updated path -->
+          <img src="/Images/Incomio-home-project.png" alt="Project 1" class="project-image">
         </div>
-         <div class="">
-         </div>
-         <h2 class="intro text-2xl lg:text-2xl ml-3 mt-3">Incomio</h2>
-         <p class="text-xs lg:text-sm ml-3 mb-4 mt-2 leading-relaxed">
+          <h2 class="intro text-2xl lg:text-2xl ml-3 mt-3">Incomio</h2>
+          <p class="text-xs lg:text-sm ml-3 mb-4 mt-2 leading-relaxed">
             Real-time analytics dashboard with data visualization, custom reports, and performance metrics tracking.
           </p>
           <div class="mb-6">
-      <!-- <h3 class="font-semibold text-lg mb-3">Tech Stack:</h3> -->
       <div class="flex flex-wrap ml-3 gap-2">
         <span class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-xs">React</span>
         <span class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-xs">D3.js</span>
@@ -259,9 +168,6 @@
         <span class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-xs">PostgreSQL</span>
       </div>
     </div>
-    <!-- <button class="bg-black text-white px-4 ml-3 py-1.5 rounded-full hover:bg-gray-800 transition-colors w-2/3 mb-5 lg:w-2/4">
-    View Project
-  </button> -->
       </div>
     </div>
   </section>
@@ -317,7 +223,7 @@
 
           <!-- React -->
           <div class="tech-card bg-white rounded-2xl p-6 flex flex-col items-center justify-center">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" class="w-16 h-16 mb-3">
+            <img src="httpsx://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" class="w-16 h-16 mb-3">
             <p class="text-gray-800 font-medium text-sm">React</p>
           </div>
 
@@ -377,7 +283,7 @@
 
           <!-- GitHub -->
           <div class="tech-card bg-white rounded-2xl p-6 flex flex-col items-center justify-center">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" class="w-16 h-16 mb-3">
+            <img src="https"cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" class="w-16 h-16 mb-3">
             <p class="text-gray-800 font-medium text-sm">GitHub</p>
           </div>
 
@@ -389,25 +295,25 @@
 
           <!-- Figma -->
           <div class="tech-card bg-white rounded-2xl p-6 flex flex-col items-center justify-center">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma" class="w-16 h-16 mb-3">
+            <img src="https"cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma" class="w-16 h-16 mb-3">
             <p class="text-gray-800 font-medium text-sm">Figma</p>
           </div>
 
           <!-- npm -->
           <div class="tech-card bg-white rounded-2xl p-6 flex flex-col items-center justify-center">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/npm/npm-original-wordmark.svg" alt="npm" class="w-16 h-16 mb-3">
+            <img src="https"cdn.jsdelivr.net/gh/devicons/devicon/icons/npm/npm-original-wordmark.svg" alt="npm" class="w-16 h-16 mb-3">
             <p class="text-gray-800 font-medium text-sm">npm</p>
           </div>
 
           <!-- Postman -->
           <div class="tech-card bg-white rounded-2xl p-6 flex flex-col items-center justify-center">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" alt="Postman" class="w-16 h-16 mb-3">
+            <img src="https"cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" alt="Postman" class="w-16 h-16 mb-3">
             <p class="text-gray-800 font-medium text-sm">Postman</p>
           </div>
 
           <!-- Postman -->
           <div class="tech-card bg-white rounded-2xl p-6 flex flex-col items-center justify-center">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-original.svg" alt="Postman" class="w-16 h-16 mb-3">
+            <img src="https"cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-original.svg" alt="Postman" class="w-16 h-16 mb-3">
             <p class="text-gray-800 font-medium text-sm">WordPress</p>
           </div>
 
@@ -416,87 +322,14 @@
 
     </div>
   </section>
+    <!-- End of PAGE-SPECIFIC content -->
 
 
-    <!-- Footer -->
-    <footer class="bg-white border-t border-gray-200 py-12 px-6">
-    <div class="max-w-7xl mx-auto">
-      
-      <!-- Footer Content -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-        
-        <!-- Dev Info -->
-        <div>
-          <h3 class="text-black text-2xl font-bold mb-4">Dev.Zuko</h3>
-          <p class="text-gray-600 text-sm leading-relaxed">
-            Front-end developer that blends quality performance with beautiful design and user experience.
-          </p>
-        </div>
+    <!-- This partial includes your <footer> -->
+    <%- include('./partials/footer.ejs') %>
+    
+    <!-- This partial includes your chatbox code -->
+    <%- include('./partials/chatbox.ejs') %>
 
-        <!-- Quick Links -->
-        <div>
-          <h4 class="text-black font-bold mb-4">Quick Links</h4>
-          <ul class="space-y-2">
-            <li><a href="./index.html" target="_blank" class="text-gray-600 hover:text-black transition-colors text-sm">Home</a></li>
-            <li><a href="#difference" class="text-gray-600 hover:text-black transition-colors text-sm">About</a></li>
-            <!-- <li><a href="#difference" class="text-gray-600 hover:text-black transition-colors text-sm">Play</a></li> -->
-            <li><a href="#paths" class="text-gray-600 hover:text-black transition-colors text-sm">Notes</a></li>
-            <li><a href="#platforms" class="text-gray-600 hover:text-black transition-colors text-sm">Contact</a></li>
-          </ul>
-        </div>
-
-        <!-- Contact -->
-        <div>
-          <h4 class="text-black font-bold mb-4">Get in Touch</h4>
-          <ul class="space-y-2">
-            <li><a href="mailto:allwellazubike@gmail.com" class="text-gray-600 hover:text-black transition-colors text-sm">allwellazubike@gmail.com</a></li>
-          </ul>
-          <!-- Social Links -->
-          <div class="grid grid-cols-3 space-x-8 space-y-4 justify-items-start items-start w-fit mt-4">
-            <!-- Twitter Account -->
-            <a href="https://x.com/faya_lordd?s=21" target="_blank" class="w-8 h-8 flex items-center justify-center transition-colors">
-              <img width="50" height="50" src="https://img.icons8.com/ios-filled/50/twitterx--v1.png" alt="twitterx--v1"/>
-            </a>
-            <!-- instagram -->
-            <a href="https://www.instagram.com/iam__allwell?igsh=ajFiM2dpOWJ1aW1v&utm_source=qr" target="_blank" class="w-8 h-8  flex items-center justify-center transition-colors">
-              <img width="48" height="48" class="" src="https://img.icons8.com/fluency/48/instagram-new.png" alt="instagram-new"/>
-            </a>
-            <!-- linkedin -->
-            <a href="https://www.linkedin.com/in/allwell-azubike-91512a1aa?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" class="w-8 h-8 flex items-center justify-center transition-colors">
-              <img width="48" height="48" src="https://img.icons8.com/color/48/linkedin.png" alt="linkedin"/>
-            </a>
-            <!-- tiktok -->
-             <a href="https://www.tiktok.com/@z.u.k.o.__?_r=1&_t=ZS-91POyHxvt5j" target="_blank" class="w-8 h-8 flex items-center justify-center transition-colors">
-              <img width="48" height="48" src="https://img.icons8.com/color/48/tiktok--v1.png" alt="tiktok--v1"/>
-            </a>
-            <!-- facebook -->
-             <a href="https://www.facebook.com/share/14KBJ9WuZKi/?mibextid=wwXIfr" target="_blank" class="w-8 h-8 flex items-center justify-center transition-colors">
-              <img width="48" height="48" src="https://img.icons8.com/color/48/facebook-new.png" alt="facebook-new"/>
-            </a>
-            <!-- github -->
-             <a href="https://github.com/allwellazubike" target="_blank" class="w-8 h-8 flex items-center justify-center transition-colors">
-              <img width="64" height="64" src="https://img.icons8.com/glyph-neue/64/github.png" alt="github"/>
-            </a>
-
-            
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Bottom Bar -->
-      <div class="border-t border-gray-200 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4">
-        <p class="text-gray-500 text-sm">
-          © Allwell 2025. All rights reserved.
-        </p>
-        <!-- <div class="flex gap-6">
-          <a href="#" class="text-gray-500 hover:text-black transition-colors text-sm">Privacy Policy</a>
-          <a href="#" class="text-gray-500 hover:text-black transition-colors text-sm">Terms of Service</a>
-        </div> -->
-      </div>
-
-    </div>
-  </footer>
-  <script src="./index.js"></script>
   </body>
 </html>
