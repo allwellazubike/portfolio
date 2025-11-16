@@ -59,9 +59,9 @@
        const chatSuggestions = document.getElementById('chat-suggestions');
        const typingIndicator = document.getElementById('typing-indicator');
 
-       // --- Configurable URLs (Using your provided URLs) ---
-       const WHATSAPP_URL = 'https://wa.me/+2349156015252'; // Your WhatsApp number
-       const X_PROFILE_URL = 'https://x.com/faya_lordd?s=21'; // Your X username
+       // --- Configurable URLs---
+       const WHATSAPP_URL = 'https://wa.me/+2349156015252'; // 
+       const X_PROFILE_URL = 'https://x.com/faya_lordd?s=21'; //
        const EMAIL_URL = 'mailto:allwellazubike@gmail.com'; 
 
        // --- Chat Flow Definition ---
@@ -226,7 +226,7 @@
            
            disableSuggestions();
 
-           // *** FIX FOR iOS: Run action *before* any delays ***
+           // *** FIX FOR iOS:***
            if (flow.action) {
                flow.action();
            }
@@ -251,7 +251,7 @@
            
            setTyping(false);
            
-           // *** The flow.action() call that was here is now at the top ***
+           // *** The flow.action()  ***
            
            if (flow.next) {
                const nextFlow = chatFlows[flow.next];
