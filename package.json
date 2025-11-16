@@ -14,9 +14,8 @@
   "type": "module",
   "dependencies": {
     "ejs": "^3.1.10",
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "tailwindcss": "^3.4.4"
   },
-  "devDependencies": {
-    "tailwindcss": "^4.1.17"
-  }
+  "devDependencies": {}
 }

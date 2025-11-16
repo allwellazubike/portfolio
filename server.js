@@ -12,34 +12,35 @@ const port = 3000;
 
 
 
-// Set EJS as the view engine
+// EJS as the view engine
 app.set('view engine', 'ejs');
-// Set the directory for your EJS files
+// Set the directory for EJS files
 app.set('views', path.join(__dirname, 'views'));
 
-// Serve static files (CSS, images, fonts) from the 'public' folder
 
 // app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.static('public'));
+// previous dir
+// app.use(express.static('public'));
 
-// --- Your Page Routes ---
+app.use(express.static(path.join(__dirname, 'public')));
+
+
+// --- Page Routes ---
 
 // Route for the home page
 app.get('/', (req, res) => {
-    // This will render views/index.ejs
+    //render views/index.ejs
     res.render('index');
 });
 
 // Route for the about page
 app.get('/about', (req, res) => {
-    // This will render views/about.ejs
+    // render views/about.ejs
     res.render('about');
 });
 
 // Route for the notes page
 app.get('/notes', (req, res) => {
-    // You will need to create views/notes.ejs
-    // For now, it will just render the header, nav, footer, and chatbox
     res.render('notes'); 
 });
 
