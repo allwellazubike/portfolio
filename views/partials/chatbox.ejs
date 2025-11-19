@@ -4,45 +4,73 @@
 -->
 
 <!-- CHATBOX HTML -->
-<div id="chat-widget" class="fixed inset-0 w-screen h-screen bg-white z-60 flex flex-col transition-all duration-300 ease-in-out opacity-0 pointer-events-none translate-y-4">
-       
-   <!-- Chat Header -->
-   <div class="flex-shrink-0 p-4 border-b border-black flex justify-between items-center">
-       <div>
-           <!-- <h3 class="text-lg font-bold">Amber</h3> -->
-           <p class="text-sm text-gray-600">Ask Amber a question</p>
-       </div>
-       <button id="close-chat-btn" class="p-1 rounded-full hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-black">
-           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-               <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-           </svg>
-       </button>
-   </div>
+<div
+  id="chat-widget"
+  class="fixed inset-0 w-screen h-screen bg-white z-60 flex flex-col transition-all duration-300 ease-in-out opacity-0 pointer-events-none translate-y-4"
+>
+  <!-- Chat Header -->
+  <div
+    class="flex-shrink-0 p-4 border-b border-black flex justify-between items-center"
+  >
+    <div>
+      <!-- <h3 class="text-lg font-bold">Amber</h3> -->
+      <p class="text-sm text-gray-600">Ask Amber a question</p>
+    </div>
+    <button
+      id="close-chat-btn"
+      class="p-1 rounded-full hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-black"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="w-6 h-6"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M6 18L18 6M6 6l12 12"
+        />
+      </svg>
+    </button>
+  </div>
 
-   <!-- Chat Messages -->
-   <div id="chat-messages" class="flex-1 overflow-y-auto p-4 space-y-4">
-       <!-- Messages will be dynamically added here -->
-       <div class="flex justify-start">
-           <div class="bg-gray-100 text-black p-3 rounded-2xl max-w-lg rounded-bl-lg">
-               <p>Hi! I'm Amber 😉. I'm here to help you with any questions you might have about Zuko's work.</p>
-           </div>
-       </div>
-        <div class="flex justify-start">
-           <div class="bg-gray-100 text-black p-3 rounded-2xl max-w-lg rounded-bl-lg">
-               <p>How can I help you today?</p>
-           </div>
-       </div>
-   </div>
+  <!-- Chat Messages -->
+  <div id="chat-messages" class="flex-1 overflow-y-auto p-4 space-y-4">
+    <!-- Messages will be dynamically added here -->
+    <div class="flex justify-start">
+      <div
+        class="bg-gray-100 text-black p-3 rounded-2xl max-w-lg rounded-bl-lg"
+      >
+        <p>
+          Hi! I'm Amber 😉. I'm here to help you with any questions you might
+          have about Zuko's work.
+        </p>
+      </div>
+    </div>
+    <div class="flex justify-start">
+      <div
+        class="bg-gray-100 text-black p-3 rounded-2xl max-w-lg rounded-bl-lg"
+      >
+        <p>How can I help you today?</p>
+      </div>
+    </div>
+  </div>
 
-   <!-- "Bot is typing..." Indicator -->
-   <div id="typing-indicator" class="p-4 border-t border-gray-100 hidden">
-       <p class="text-sm text-gray-500 italic">Amber is typing...</p>
-   </div>
+  <!-- "Bot is typing..." Indicator -->
+  <div id="typing-indicator" class="p-4 border-t border-gray-100 hidden">
+    <p class="text-sm text-gray-500 italic">Amber is typing...</p>
+  </div>
 
-   <!-- Chat Suggestions -->
-   <div id="chat-suggestions" class="flex-shrink-0 p-4 mb-520 border-t border-gray-100">
-       <!-- Suggestions will be dynamically added here -->
-   </div>
+  <!-- Chat Suggestions -->
+  <div
+    id="chat-suggestions"
+    class="flex-shrink-0 p-4 mb-520 border-t border-gray-100"
+  >
+    <!-- Suggestions will be dynamically added here -->
+  </div>
 </div>
 
 <!-- 
@@ -50,242 +78,248 @@
   This <script> tag contains all the logic.
 -->
 <script>
-   document.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener("DOMContentLoaded", () => {
+    // --- DOM Elements ---
+    const closeChatBtn = document.getElementById("close-chat-btn");
+    const chatWidget = document.getElementById("chat-widget");
+    const chatMessages = document.getElementById("chat-messages");
+    const chatSuggestions = document.getElementById("chat-suggestions");
+    const typingIndicator = document.getElementById("typing-indicator");
 
-       // --- DOM Elements ---
-       const closeChatBtn = document.getElementById('close-chat-btn');
-       const chatWidget = document.getElementById('chat-widget');
-       const chatMessages = document.getElementById('chat-messages');
-       const chatSuggestions = document.getElementById('chat-suggestions');
-       const typingIndicator = document.getElementById('typing-indicator');
+    // --- Configurable URLs---
+    const WHATSAPP_URL = "https://wa.me/+2349156015252"; //
+    const X_PROFILE_URL = "https://x.com/faya_lordd?s=21"; //
+    const EMAIL_URL = "mailto:allwellazubike@gmail.com";
 
-       // --- Configurable URLs---
-       const WHATSAPP_URL = 'https://wa.me/+2349156015252'; // 
-       const X_PROFILE_URL = 'https://x.com/faya_lordd?s=21'; //
-       const EMAIL_URL = 'mailto:allwellazubike@gmail.com'; 
+    // --- Chat Flow Definition ---
+    const chatFlows = {
+      start: {
+        suggestions: [
+          { key: "hire", text: "We’d like to hire you" },
+          { key: "whatsapp", text: "Connect on WhatsApp" },
+          { key: "hello", text: "Just Saying hello!" },
+          { key: "x_follow", text: "Follow on X" },
+        ],
+      },
+      hire: {
+        userText: "We’d like to hire you",
+        aiReplies: [
+          { text: "That's great!", delay: 1000 },
+          { text: "Send me a message let's chat further.", delay: 1500 },
+        ],
+        next: "hire_options",
+      },
+      hire_options: {
+        suggestions: [
+          { key: "send_message_email", text: "Send a message" },
+          { key: "other_options", text: "Other options" },
+        ],
+      },
+      send_message_email: {
+        userText: "Send a message",
+        action: () => {
+          window.open(EMAIL_URL, "_blank");
+        },
+        aiReplies: [
+          { text: "Opening your email client so we can connect!", delay: 1000 },
+        ],
+        next: "start_short_delay", // Go back to start
+      },
+      other_options: {
+        userText: "Other options",
+        aiReplies: [
+          { text: "No problem. What else can I help you with?", delay: 1000 },
+        ],
+        next: "start",
+      },
+      whatsapp: {
+        userText: "Connect on WhatsApp",
+        aiReplies: [{ text: "That's great!", delay: 1000 }],
+        next: "whatsapp_options",
+      },
+      whatsapp_options: {
+        suggestions: [
+          { key: "send_message_whatsapp", text: "Send a message" },
+          { key: "other_options", text: "Other options" },
+        ],
+      },
+      send_message_whatsapp: {
+        userText: "Send a message",
+        action: () => {
+          window.open(WHATSAPP_URL, "_blank");
+        },
+        aiReplies: [{ text: "Opening WhatsApp...", delay: 1000 }],
+        next: "start_short_delay",
+      },
+      hello: {
+        userText: "Just Saying hello!",
+        aiReplies: [
+          { text: "Hello there!", delay: 1000 },
+          {
+            text: "Thanks for stopping by. Feel free to ask a question if you have one!",
+            delay: 1500,
+          },
+        ],
+        next: "start",
+      },
+      x_follow: {
+        userText: "Follow on X",
+        aiReplies: [{ text: "That's great!", delay: 1000 }],
+        next: "x_options",
+      },
+      x_options: {
+        suggestions: [
+          { key: "launch_x", text: "Launch X" },
+          { key: "other_options", text: "Other options" },
+        ],
+      },
+      launch_x: {
+        userText: "Launch X",
+        action: () => {
+          window.open(X_PROFILE_URL, "_blank");
+        },
+        aiReplies: [
+          { text: "Opening my X profile for you to follow.", delay: 1000 },
+        ],
+        next: "start_short_delay",
+      },
+      start_short_delay: {
+        aiReplies: [{ text: "Anything else?", delay: 2000 }],
+        next: "start",
+      },
+    };
 
-       // --- Chat Flow Definition ---
-       const chatFlows = {
-           'start': {
-               suggestions: [
-                   { key: 'hire', text: "We’d like to hire you" },
-                   { key: 'whatsapp', text: "Connect on WhatsApp" },
-                   { key: 'hello', text: "Just Saying hello!" },
-                   { key: 'x_follow', text: "Follow on X" }
-               ]
-           },
-           'hire': {
-               userText: "We’d like to hire you",
-               aiReplies: [
-                   { text: "That's great!", delay: 1000 },
-                   { text: "Send me a message let's chat further.", delay: 1500 }
-               ],
-               next: 'hire_options'
-           },
-           'hire_options': {
-               suggestions: [
-                   { key: 'send_message_email', text: "Send a message" },
-                   { key: 'other_options', text: "Other options" }
-               ]
-           },
-           'send_message_email': {
-               userText: "Send a message",
-               action: () => { window.open(EMAIL_URL, '_blank'); },
-               aiReplies: [
-                   { text: "Opening your email client so we can connect!", delay: 1000 }
-               ],
-               next: 'start_short_delay' // Go back to start
-           },
-           'other_options': {
-               userText: "Other options",
-               aiReplies: [
-                   { text: "No problem. What else can I help you with?", delay: 1000 }
-               ],
-               next: 'start'
-           },
-           'whatsapp': {
-               userText: "Connect on WhatsApp",
-               aiReplies: [
-                   { text: "That's great!", delay: 1000 }
-               ],
-               next: 'whatsapp_options'
-           },
-           'whatsapp_options': {
-               suggestions: [
-                   { key: 'send_message_whatsapp', text: "Send a message" },
-                   { key: 'other_options', text: "Other options" }
-               ]
-           },
-           'send_message_whatsapp': {
-               userText: "Send a message",
-               action: () => { window.open(WHATSAPP_URL, '_blank'); },
-               aiReplies: [
-                   { text: "Opening WhatsApp...", delay: 1000 }
-               ],
-               next: 'start_short_delay'
-           },
-           'hello': {
-               userText: "Just Saying hello!",
-               aiReplies: [
-                   { text: "Hello there!", delay: 1000 },
-                   { text: "Thanks for stopping by. Feel free to ask a question if you have one!", delay: 1500 }
-               ],
-               next: 'start'
-           },
-           'x_follow': {
-               userText: "Follow on X",
-               aiReplies: [
-                   { text: "That's great!", delay: 1000 }
-               ],
-               next: 'x_options'
-           },
-           'x_options': {
-               suggestions: [
-                   { key: 'launch_x', text: "Launch X" },
-                   { key: 'other_options', text: "Other options" }
-               ]
-           },
-           'launch_x': {
-               userText: "Launch X",
-               action: () => { window.open(X_PROFILE_URL, '_blank'); },
-               aiReplies: [
-                   { text: "Opening my X profile for you to follow.", delay: 1000 }
-               ],
-               next: 'start_short_delay'
-           },
-           'start_short_delay': {
-               aiReplies: [
-                   { text: "Anything else?", delay: 2000 }
-               ],
-               next: 'start'
-           }
-       };
+    // --- Helper Functions ---
+    function toggleChat() {
+      chatWidget.classList.toggle("opacity-0");
+      chatWidget.classList.toggle("pointer-events-none");
+      chatWidget.classList.toggle("translate-y-4");
+      chatWidget.classList.toggle("opacity-100");
+      chatWidget.classList.toggle("pointer-events-auto");
+    }
 
-       // --- Helper Functions ---
-       function toggleChat() {
-           chatWidget.classList.toggle('opacity-0');
-           chatWidget.classList.toggle('pointer-events-none');
-           chatWidget.classList.toggle('translate-y-4');
-           chatWidget.classList.toggle('opacity-100');
-           chatWidget.classList.toggle('pointer-events-auto');
-       }
+    function addMessage(text, sender = "ai") {
+      const messageDiv = document.createElement("div");
+      messageDiv.className = `flex ${
+        sender === "user" ? "justify-end" : "justify-start"
+      }`;
+      const bubble = document.createElement("div");
+      bubble.className = `p-3 rounded-2xl max-w-lg ${
+        sender === "user"
+          ? "bg-black text-white rounded-br-lg"
+          : "bg-gray-100 text-black rounded-bl-lg"
+      }`;
+      bubble.innerHTML = `<p>${text}</p>`;
+      messageDiv.appendChild(bubble);
+      chatMessages.appendChild(messageDiv);
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
 
-       function addMessage(text, sender = 'ai') {
-           const messageDiv = document.createElement('div');
-           messageDiv.className = `flex ${sender === 'user' ? 'justify-end' : 'justify-start'}`;
-           const bubble = document.createElement('div');
-           bubble.className = `p-3 rounded-2xl max-w-lg ${
-               sender === 'user' 
-               ? 'bg-black text-white rounded-br-lg' 
-               : 'bg-gray-100 text-black rounded-bl-lg'
-           }`;
-           bubble.innerHTML = `<p>${text}</p>`;
-           messageDiv.appendChild(bubble);
-           chatMessages.appendChild(messageDiv);
-           chatMessages.scrollTop = chatMessages.scrollHeight;
-       }
+    function setTyping(isTyping) {
+      if (isTyping) {
+        typingIndicator.classList.remove("hidden");
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+      } else {
+        typingIndicator.classList.add("hidden");
+      }
+    }
 
-       function setTyping(isTyping) {
-           if (isTyping) {
-               typingIndicator.classList.remove('hidden');
-               chatMessages.scrollTop = chatMessages.scrollHeight;
-           } else {
-               typingIndicator.classList.add('hidden');
-           }
-       }
+    function showSuggestions(suggestions = []) {
+      chatSuggestions.innerHTML = "";
+      chatSuggestions.className =
+        "flex-shrink-0 p-4 mb-10 border-t border-gray-100 flex flex-col space-y-2";
+      if (suggestions.length === 0) {
+        chatSuggestions.classList.add("hidden");
+        return;
+      }
+      chatSuggestions.classList.remove("hidden");
+      suggestions.forEach((suggestion) => {
+        const button = document.createElement("button");
+        button.dataset.key = suggestion.key;
+        button.textContent = suggestion.text;
+        button.className =
+          "w-full text-center py-3 px-5 border border-black rounded-lg transition-all duration-200 hover:bg-black hover:text-white focus:outline-none focus:ring-2 focus:ring-black";
+        button.addEventListener("click", () =>
+          handleSuggestionClick(suggestion.key)
+        );
+        chatSuggestions.appendChild(button);
+      });
+    }
 
-       function showSuggestions(suggestions = []) {
-           chatSuggestions.innerHTML = '';
-           chatSuggestions.className = "flex-shrink-0 p-4 border-t border-gray-100 flex flex-col space-y-2";
-           if (suggestions.length === 0) {
-               chatSuggestions.classList.add('hidden');
-               return;
-           }
-           chatSuggestions.classList.remove('hidden');
-           suggestions.forEach(suggestion => {
-               const button = document.createElement('button');
-               button.dataset.key = suggestion.key;
-               button.textContent = suggestion.text;
-               button.className = "w-full text-center py-3 px-5 border border-black rounded-lg transition-all duration-200 hover:bg-black hover:text-white focus:outline-none focus:ring-2 focus:ring-black";
-               button.addEventListener('click', () => handleSuggestionClick(suggestion.key));
-               chatSuggestions.appendChild(button);
-           });
-       }
+    function disableSuggestions() {
+      chatSuggestions.querySelectorAll("button").forEach((btn) => {
+        btn.disabled = true;
+        btn.classList.add("opacity-50", "cursor-not-allowed");
+      });
+    }
 
-       function disableSuggestions() {
-            chatSuggestions.querySelectorAll('button').forEach(btn => {
-               btn.disabled = true;
-               btn.classList.add('opacity-50', 'cursor-not-allowed');
-           });
-       }
+    // --- CORRECTED FUNCTION FOR iOS ---
+    async function handleSuggestionClick(key) {
+      const flow = chatFlows[key];
+      if (!flow) return;
 
-       // --- CORRECTED FUNCTION FOR iOS ---
-       async function handleSuggestionClick(key) {
-           const flow = chatFlows[key];
-           if (!flow) return;
-           
-           disableSuggestions();
+      disableSuggestions();
 
-           // *** FIX FOR iOS:***
-           if (flow.action) {
-               flow.action();
-           }
+      // *** FIX FOR iOS:***
+      if (flow.action) {
+        flow.action();
+      }
 
-           if (flow.userText) {
-               addMessage(flow.userText, 'user');
-           }
-           
-           setTyping(true);
-           
-           if (flow.aiReplies) {
-               for (const reply of flow.aiReplies) {
-                   await new Promise(resolve => setTimeout(resolve, reply.delay));
-                   setTyping(false);
-                   addMessage(reply.text, 'ai');
-                   if (flow.aiReplies.indexOf(reply) < flow.aiReplies.length - 1) {
-                       await new Promise(resolve => setTimeout(resolve, 500));
-                       setTyping(true);
-                   }
-               }
-           }
-           
-           setTyping(false);
-           
-           // *** The flow.action()  ***
-           
-           if (flow.next) {
-               const nextFlow = chatFlows[flow.next];
-               if (nextFlow.aiReplies && !nextFlow.suggestions) {
-                   await handleSuggestionClick(flow.next);
-               } else if (nextFlow.suggestions) {
-                   await new Promise(resolve => setTimeout(resolve, 500));
-                   showSuggestions(nextFlow.suggestions);
-               }
-           }
-       }
+      if (flow.userText) {
+        addMessage(flow.userText, "user");
+      }
 
-       // --- Event Listeners ---
-       closeChatBtn.addEventListener('click', toggleChat);
-       
-       // For the Nav Bar link
-       const contactNavLink = document.getElementById('contact-nav-link');
-       if (contactNavLink) {
-           contactNavLink.addEventListener('click', (event) => {
-               event.preventDefault();
-               toggleChat();
-           });
-       }
-       
-       // For the Footer link
-       const contactFooterLink = document.getElementById('contact-footer-link');
-       if (contactFooterLink) {
-           contactFooterLink.addEventListener('click', (event) => {
-               event.preventDefault();
-               toggleChat();
-           });
-       }
+      setTyping(true);
 
-       // --- Initial setup ---
-       showSuggestions(chatFlows.start.suggestions);
-   });
+      if (flow.aiReplies) {
+        for (const reply of flow.aiReplies) {
+          await new Promise((resolve) => setTimeout(resolve, reply.delay));
+          setTyping(false);
+          addMessage(reply.text, "ai");
+          if (flow.aiReplies.indexOf(reply) < flow.aiReplies.length - 1) {
+            await new Promise((resolve) => setTimeout(resolve, 500));
+            setTyping(true);
+          }
+        }
+      }
+
+      setTyping(false);
+
+      // *** The flow.action()  ***
+
+      if (flow.next) {
+        const nextFlow = chatFlows[flow.next];
+        if (nextFlow.aiReplies && !nextFlow.suggestions) {
+          await handleSuggestionClick(flow.next);
+        } else if (nextFlow.suggestions) {
+          await new Promise((resolve) => setTimeout(resolve, 500));
+          showSuggestions(nextFlow.suggestions);
+        }
+      }
+    }
+
+    // --- Event Listeners ---
+    closeChatBtn.addEventListener("click", toggleChat);
+
+    // For the Nav Bar link
+    const contactNavLink = document.getElementById("contact-nav-link");
+    if (contactNavLink) {
+      contactNavLink.addEventListener("click", (event) => {
+        event.preventDefault();
+        toggleChat();
+      });
+    }
+
+    // For the Footer link
+    const contactFooterLink = document.getElementById("contact-footer-link");
+    if (contactFooterLink) {
+      contactFooterLink.addEventListener("click", (event) => {
+        event.preventDefault();
+        toggleChat();
+      });
+    }
+
+    // --- Initial setup ---
+    showSuggestions(chatFlows.start.suggestions);
+  });
 </script>
