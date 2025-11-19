@@ -536,9 +536,6 @@
   .rounded-\[40px\] {
     border-radius: 40px;
   }
-  .rounded-\[50px\] {
-    border-radius: 50px;
-  }
   .rounded-full {
     border-radius: calc(infinity * 1px);
   }
@@ -609,6 +606,24 @@
   }
   .object-cover {
     object-fit: cover;
+  }
+  .object-\[center_5\%\] {
+    object-position: center 5%;
+  }
+  .object-\[center_10\%\] {
+    object-position: center 10%;
+  }
+  .object-\[center_15\%\] {
+    object-position: center 15%;
+  }
+  .object-\[center_25\%\] {
+    object-position: center 25%;
+  }
+  .object-\[center_45\%\] {
+    object-position: center 45%;
+  }
+  .object-\[center_75\%\] {
+    object-position: center 75%;
   }
   .p-1 {
     padding: calc(var(--spacing) * 1);
