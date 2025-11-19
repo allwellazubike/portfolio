@@ -223,9 +223,6 @@
   .relative {
     position: relative;
   }
-  .static {
-    position: static;
-  }
   .inset-0 {
     inset: calc(var(--spacing) * 0);
   }
@@ -238,14 +235,8 @@
   .z-60 {
     z-index: 60;
   }
-  .m-20 {
-    margin: calc(var(--spacing) * 20);
-  }
   .mx-auto {
     margin-inline: auto;
-  }
-  .-mt-20 {
-    margin-top: calc(var(--spacing) * -20);
   }
   .mt-2 {
     margin-top: calc(var(--spacing) * 2);
@@ -283,9 +274,6 @@
   .mb-4 {
     margin-bottom: calc(var(--spacing) * 4);
   }
-  .mb-5 {
-    margin-bottom: calc(var(--spacing) * 5);
-  }
   .mb-6 {
     margin-bottom: calc(var(--spacing) * 6);
   }
@@ -300,12 +288,6 @@
   }
   .mb-15 {
     margin-bottom: calc(var(--spacing) * 15);
-  }
-  .mb-20 {
-    margin-bottom: calc(var(--spacing) * 20);
-  }
-  .mb-50 {
-    margin-bottom: calc(var(--spacing) * 50);
   }
   .mb-520 {
     margin-bottom: calc(var(--spacing) * 520);
@@ -536,9 +518,6 @@
   .rounded-\[40px\] {
     border-radius: 40px;
   }
-  .rounded-\[50px\] {
-    border-radius: 50px;
-  }
   .rounded-full {
     border-radius: calc(infinity * 1px);
   }
@@ -610,6 +589,24 @@
   .object-cover {
     object-fit: cover;
   }
+  .object-\[center_5\%\] {
+    object-position: center 5%;
+  }
+  .object-\[center_10\%\] {
+    object-position: center 10%;
+  }
+  .object-\[center_15\%\] {
+    object-position: center 15%;
+  }
+  .object-\[center_25\%\] {
+    object-position: center 25%;
+  }
+  .object-\[center_45\%\] {
+    object-position: center 45%;
+  }
+  .object-\[center_75\%\] {
+    object-position: center 75%;
+  }
   .p-1 {
     padding: calc(var(--spacing) * 1);
   }
@@ -621,9 +618,6 @@
   }
   .p-6 {
     padding: calc(var(--spacing) * 6);
-  }
-  .p-8 {
-    padding: calc(var(--spacing) * 8);
   }
   .p-24 {
     padding: calc(var(--spacing) * 24);
@@ -681,9 +675,6 @@
   }
   .pb-16 {
     padding-bottom: calc(var(--spacing) * 16);
-  }
-  .pb-20 {
-    padding-bottom: calc(var(--spacing) * 20);
   }
   .pl-4 {
     padding-left: calc(var(--spacing) * 4);
@@ -759,10 +750,6 @@
   .font-bold {
     --tw-font-weight: var(--font-weight-bold);
     font-weight: var(--font-weight-bold);
-  }
-  .font-extrabold {
-    --tw-font-weight: var(--font-weight-extrabold);
-    font-weight: var(--font-weight-extrabold);
   }
   .font-medium {
     --tw-font-weight: var(--font-weight-medium);
